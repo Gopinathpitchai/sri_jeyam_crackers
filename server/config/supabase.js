@@ -9,7 +9,7 @@ if (!globalThis.WebSocket) {
 }
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://quigqqhspdlqgojtqyuc.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_32kz1Z7mhuLqxAhyczmsqg_wjGqmIbO';
 
 // Create Supabase Client with secret key for full admin access
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
@@ -19,7 +19,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   }
 });
 
-// Resilient Local Store file path
+// Resilient Local Store file path (safe for both local server and Vercel serverless)
 const DATA_FILE = path.join(__dirname, '..', 'data', 'store.json');
 
 // Initialize local store structure (strictly NO dummy cracker products!)
@@ -54,26 +54,21 @@ function getInitialStore() {
 
 function loadLocalStore() {
   try {
-    if (!fs.existsSync(DATA_FILE)) {
-      const initial = getInitialStore();
-      fs.writeFileSync(DATA_FILE, JSON.stringify(initial, null, 2));
-      return initial;
+    if (fs.existsSync(DATA_FILE)) {
+      const data = fs.readFileSync(DATA_FILE, 'utf8');
+      return JSON.parse(data);
     }
-    const data = fs.readFileSync(DATA_FILE, 'utf8');
-    return JSON.parse(data);
   } catch (err) {
-    console.error('Error reading local store, resetting to clean state:', err);
-    const initial = getInitialStore();
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initial, null, 2));
-    return initial;
+    console.warn('Could not read local store file, using in-memory store:', err.message);
   }
+  return getInitialStore();
 }
 
 function saveLocalStore(store) {
   try {
     fs.writeFileSync(DATA_FILE, JSON.stringify(store, null, 2));
   } catch (err) {
-    console.error('Error saving local store:', err);
+    console.warn('Could not persist to local store (read-only filesystem):', err.message);
   }
 }
 

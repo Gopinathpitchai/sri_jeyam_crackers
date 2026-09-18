@@ -24,22 +24,42 @@ app.use((req, res, next) => {
 // Static files (Images)
 app.use('/images', express.static(path.join(__dirname, '../client/public/images')));
 
-// API Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/products', require('./routes/products'));
-app.use('/api/orders', require('./routes/orders'));
-app.use('/api/upload', require('./routes/upload'));
-app.use('/api/settings', require('./routes/settings'));
-app.use('/api/status', require('./routes/status'));
+// API Routes - Registered for both /api/* and /* to seamlessly handle Vercel serverless rewrites
+const authRouter = require('./routes/auth');
+const productsRouter = require('./routes/products');
+const ordersRouter = require('./routes/orders');
+const uploadRouter = require('./routes/upload');
+const settingsRouter = require('./routes/settings');
+const statusRouter = require('./routes/status');
+
+app.use('/api/auth', authRouter);
+app.use('/auth', authRouter);
+
+app.use('/api/products', productsRouter);
+app.use('/products', productsRouter);
+
+app.use('/api/orders', ordersRouter);
+app.use('/orders', ordersRouter);
+
+app.use('/api/upload', uploadRouter);
+app.use('/upload', uploadRouter);
+
+app.use('/api/settings', settingsRouter);
+app.use('/settings', settingsRouter);
+
+app.use('/api/status', statusRouter);
+app.use('/status', statusRouter);
 
 // Root health check
-app.get('/api/health', (req, res) => {
+const healthHandler = (req, res) => {
   res.json({
     status: 'ok',
     app: 'Sri Jeyam Crackers API',
     time: new Date().toISOString()
   });
-});
+};
+app.get('/api/health', healthHandler);
+app.get('/health', healthHandler);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
