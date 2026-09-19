@@ -20,7 +20,7 @@ export default function FireworksCanvas() {
     window.addEventListener('resize', handleResize);
 
     const particles = [];
-    const colors = ['#ffd000', '#ff3366', '#33ccff', '#ff9900', '#ffffff', '#7000ff', '#00ffaa'];
+    const colors = ['#dc2626', '#d97706', '#2563eb', '#ea580c', '#7c3aed', '#059669', '#e11d48'];
 
     function createFirework(x, y) {
       const count = 35 + Math.floor(Math.random() * 25);
@@ -91,7 +91,7 @@ export default function FireworksCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-45"
+      className="fixed inset-0 pointer-events-none z-0 opacity-25"
     />
   );
 }

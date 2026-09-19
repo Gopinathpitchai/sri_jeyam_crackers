@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { X, CheckCircle2, MessageSquare, Phone, MapPin, Sparkles, ShoppingBag, ShieldCheck } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, CheckCircle2, MessageSquare, Phone, MapPin, Sparkles, ShoppingBag, ShieldCheck, ArrowRight, Printer, FileText } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCart } from '../context/CartContext';
 import { api } from '../utils/api';
 
-export default function CheckoutModal({ isOpen, onClose }) {
+export default function CheckoutModal({ isOpen, onClose, onViewBill }) {
   const { cartItems, subtotal, discount, total, clearCart } = useCart();
 
   const [formData, setFormData] = useState({
@@ -20,6 +20,20 @@ export default function CheckoutModal({ isOpen, onClose }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [completedOrder, setCompletedOrder] = useState(null);
+
+  // Automatically reset completed order if modal opens with active cart items
+  useEffect(() => {
+    if (isOpen && cartItems.length > 0) {
+      setCompletedOrder(null);
+      setError('');
+    }
+  }, [isOpen, cartItems.length]);
+
+  const handleModalClose = () => {
+    setCompletedOrder(null);
+    setError('');
+    onClose();
+  };
 
   if (!isOpen) return null;
 
@@ -86,7 +100,7 @@ export default function CheckoutModal({ isOpen, onClose }) {
       msg += `${idx + 1}. ${item.name} (${item.pack_size || '1 Box'}) x ${item.quantity} = ₹${item.total || (item.offer_price * item.quantity)}\n`;
     });
     msg += `\n*Total MRP:* ₹${completedOrder.subtotal}\n`;
-    msg += `*Diwali 50% Savings:* -₹${completedOrder.discount}\n`;
+    msg += `*Diwali 75% Savings:* -₹${completedOrder.discount}\n`;
     msg += `*🔥 Final Net Payable:* ₹${completedOrder.total_amount}\n\n`;
     msg += `Please confirm my order and send dispatch tracking details!`;
 
@@ -94,10 +108,10 @@ export default function CheckoutModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl bg-midnight-950 border border-festive-gold/40 rounded-3xl shadow-2xl overflow-hidden text-slate-100 my-8">
+    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
+      <div className="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden text-slate-900 my-8">
         {/* Modal Header */}
-        <div className="p-5 bg-gradient-to-r from-[#880816] via-[#c61021] to-[#880816] border-b border-festive-gold/30 flex items-center justify-between">
+        <div className="p-5 bg-gradient-to-r from-red-700 via-red-600 to-red-700 border-b border-amber-300/40 flex items-center justify-between text-white">
           <div className="flex items-center gap-2.5">
             <span className="text-2xl diya-glow">🪔</span>
             <div>
@@ -110,7 +124,7 @@ export default function CheckoutModal({ isOpen, onClose }) {
             </div>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleModalClose}
             className="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-black/20 transition-colors"
           >
             <X className="w-5 h-5" />
@@ -120,63 +134,58 @@ export default function CheckoutModal({ isOpen, onClose }) {
         {/* Order Success Screen */}
         {completedOrder ? (
           <div className="p-6 sm:p-8 text-center space-y-5">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center mx-auto text-emerald-400">
+            <div className="w-16 h-16 rounded-full bg-emerald-100 border-2 border-emerald-500 flex items-center justify-center mx-auto text-emerald-600">
               <CheckCircle2 className="w-9 h-9" />
             </div>
 
             <div>
-              <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Order Placed Successfully</span>
-              <div className="text-2xl sm:text-3xl font-black font-mono text-festive-gold mt-1">
+              <span className="text-xs uppercase font-bold text-emerald-700 tracking-wider">Order Placed Successfully</span>
+              <div className="text-2xl sm:text-3xl font-black font-mono text-red-600 mt-1">
                 {completedOrder.order_number}
               </div>
-              <p className="text-xs text-slate-300 mt-1">
-                Save this Order ID to track your delivery status anytime.
+              <p className="text-xs text-slate-600 mt-1">
+                A copy of your order has been saved. You can also track it anytime using this order ID.
               </p>
             </div>
 
-            {/* Bill Summary */}
-            <div className="bg-midnight-900 p-4 rounded-2xl border border-slate-800 text-left space-y-2 text-xs">
-              <div className="flex justify-between text-slate-400">
+            {/* Price Summary */}
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-1.5 text-xs text-slate-700 text-left">
+              <div className="flex justify-between">
                 <span>Customer:</span>
-                <span className="font-bold text-white">{completedOrder.customer_name} ({completedOrder.phone_number})</span>
+                <span className="font-bold text-slate-900">{completedOrder.customer_name} ({completedOrder.phone || completedOrder.phone_number})</span>
               </div>
-              <div className="flex justify-between text-slate-400">
-                <span>Delivery To:</span>
-                <span className="font-medium text-slate-200">{completedOrder.address}, {completedOrder.city}</span>
+              <div className="flex justify-between">
+                <span>Total Crackers Items:</span>
+                <span className="font-bold text-slate-900">{completedOrder.items?.length || 0} items</span>
               </div>
-              <div className="flex justify-between text-slate-400 pt-2 border-t border-slate-800">
-                <span>Total Items:</span>
-                <span>{(completedOrder.items || []).length} items</span>
+              <div className="flex justify-between">
+                <span>Total MRP:</span>
+                <span className="font-mono">₹{completedOrder.subtotal}</span>
               </div>
-              <div className="flex justify-between text-emerald-400 font-bold">
-                <span>Diwali 50% Savings:</span>
+              <div className="flex justify-between text-emerald-700 font-bold">
+                <span>Diwali Discount Savings:</span>
                 <span>-₹{completedOrder.discount}</span>
               </div>
-              <div className="flex justify-between text-sm sm:text-base font-black text-white pt-2 border-t border-slate-800">
+              <div className="flex justify-between text-sm sm:text-base font-black text-slate-900 pt-2 border-t border-slate-200">
                 <span>Total Amount:</span>
-                <span className="text-festive-gold font-mono">₹{completedOrder.total_amount}</span>
+                <span className="text-red-600 font-mono">₹{completedOrder.total_amount}</span>
               </div>
             </div>
 
-            {/* Payment & Bank Details (From Price List Page 15) */}
-            <div className="p-3.5 bg-midnight-900/90 rounded-2xl border border-festive-gold/40 text-left space-y-2 text-xs">
-              <div className="text-festive-yellow font-bold flex items-center justify-between">
-                <span>💳 Payment Transfer Details:</span>
-                <span className="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">Instant UPI Available</span>
+            {/* UPI Payment Details */}
+            <div className="p-3.5 bg-amber-50/70 rounded-2xl border border-amber-200 text-left space-y-2 text-xs">
+              <div className="text-amber-900 font-bold flex items-center justify-between">
+                <span>💳 UPI Payment Details:</span>
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300 font-semibold">Instant UPI Available</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-300">
-                <div className="bg-midnight-950 p-2 rounded-lg border border-slate-800">
-                  <div className="font-bold text-amber-300">📱 GPay / PhonePe / Paytm</div>
-                  <div>Number: <strong className="text-white font-mono">8939910664</strong></div>
-                  <div>UPI: <strong className="text-white font-mono">8939910664@icici</strong></div>
-                </div>
-                <div className="bg-midnight-950 p-2 rounded-lg border border-slate-800">
-                  <div className="font-bold text-amber-300">🏦 ICICI Bank Transfer</div>
-                  <div>A/C: <strong className="text-white font-mono">603801551488</strong></div>
-                  <div>IFSC: <strong className="text-white font-mono">ICIC0006037</strong> (CHENNAI)</div>
+              <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-xs text-slate-700 space-y-1 text-xs">
+                <div className="font-bold text-amber-800">📱 GPay / PhonePe / Paytm</div>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] pt-0.5">
+                  <div>Number: <strong className="text-slate-900 font-mono font-bold">8939910664</strong></div>
+                  <div>UPI ID: <strong className="text-slate-900 font-mono font-bold">8939910664@icici</strong></div>
                 </div>
               </div>
-              <p className="text-[10px] text-slate-400 italic text-center pt-1">
+              <p className="text-[10px] text-slate-500 italic text-center pt-1">
                 Please share the payment screenshot on WhatsApp after paying.
               </p>
             </div>
@@ -187,24 +196,44 @@ export default function CheckoutModal({ isOpen, onClose }) {
                 href={getWhatsAppShareLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-md flex items-center justify-center gap-2 transition-all"
               >
                 <MessageSquare className="w-5 h-5" />
                 <span>CONFIRM ORDER ON WHATSAPP (RECOMMENDED)</span>
               </a>
 
+              {/* View / Print Official Bill */}
+              {onViewBill && completedOrder && (
+                <button
+                  onClick={() => onViewBill(completedOrder)}
+                  className="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm shadow-md flex items-center justify-center gap-2 transition-all"
+                >
+                  <Printer className="w-5 h-5" />
+                  <span>GENERATE / PRINT BILL (ரசீது பில் பார்க்க)</span>
+                </button>
+              )}
+
+              {/* Start New Order Button */}
+              <button
+                onClick={handleModalClose}
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white font-black text-sm shadow-md hover:brightness-110 flex items-center justify-center gap-2 active:scale-98 transition-all border border-red-700"
+              >
+                <span>DONE & START NEXT ORDER (புதிய ஆர்டர் செய்க)</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <a
                   href="tel:6380115587"
-                  className="py-2.5 px-3 rounded-lg bg-midnight-900 border border-festive-gold/40 text-festive-yellow hover:bg-midnight-800 font-bold flex items-center justify-center gap-1.5"
+                  className="py-2.5 px-3 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 hover:bg-slate-200 font-bold flex items-center justify-center gap-1.5"
                 >
-                  <Phone className="w-3.5 h-3.5" /> Call: 6380115587
+                  <Phone className="w-3.5 h-3.5 text-red-600" /> Call: 6380115587
                 </a>
                 <button
-                  onClick={onClose}
-                  className="py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold"
+                  onClick={handleModalClose}
+                  className="py-2.5 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold"
                 >
-                  Done
+                  Close
                 </button>
               </div>
             </div>
@@ -213,28 +242,28 @@ export default function CheckoutModal({ isOpen, onClose }) {
           /* Checkout Form */
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
             {error && (
-              <div className="p-3 rounded-xl bg-red-950/80 border border-red-800 text-red-200 text-xs font-medium">
+              <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                 ⚠️ {error}
               </div>
             )}
 
             {/* Order Price Snapshot */}
-            <div className="bg-midnight-900 p-3 rounded-xl border border-festive-gold/30 flex items-center justify-between text-xs">
+            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
               <div>
-                <span className="text-slate-400">Total Items: </span>
-                <span className="font-bold text-white">{cartItems.length} items</span>
+                <span className="text-slate-500">Total Items: </span>
+                <span className="font-bold text-slate-900">{cartItems.length} items</span>
               </div>
               <div>
-                <span className="text-slate-400 line-through mr-2">MRP: ₹{subtotal}</span>
-                <span className="font-black text-sm text-festive-gold font-mono">Payable: ₹{total}</span>
+                <span className="text-slate-400 line-through mr-2 font-mono">MRP: ₹{subtotal}</span>
+                <span className="font-black text-sm text-red-600 font-mono">Payable: ₹{total}</span>
               </div>
             </div>
 
             {/* Form Fields */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
-                  Full Name <span className="text-festive-red">*</span>
+                <label className="block text-slate-700 font-semibold mb-1">
+                  Full Name <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -243,13 +272,13 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   value={formData.customer_name}
                   onChange={handleChange}
                   required
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
-                  Mobile Number <span className="text-festive-red">*</span>
+                <label className="block text-slate-700 font-semibold mb-1">
+                  Mobile Number <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="tel"
@@ -258,12 +287,12 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   value={formData.phone_number}
                   onChange={handleChange}
                   required
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
+                <label className="block text-slate-700 font-semibold mb-1">
                   WhatsApp Number
                 </label>
                 <input
@@ -272,13 +301,13 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   placeholder="For order updates & bill"
                   value={formData.whatsapp_number}
                   onChange={handleChange}
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
-                  City / Town <span className="text-festive-red">*</span>
+                <label className="block text-slate-700 font-semibold mb-1">
+                  City / Town <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -287,13 +316,13 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   value={formData.city}
                   onChange={handleChange}
                   required
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-slate-300 font-semibold mb-1">
-                  Delivery Address & Landmark <span className="text-festive-red">*</span>
+                <label className="block text-slate-700 font-semibold mb-1">
+                  Delivery Address & Landmark <span className="text-red-600">*</span>
                 </label>
                 <textarea
                   rows="2"
@@ -302,12 +331,12 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   value={formData.address}
                   onChange={handleChange}
                   required
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none resize-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none resize-none transition-all"
                 ></textarea>
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
+                <label className="block text-slate-700 font-semibold mb-1">
                   Pincode
                 </label>
                 <input
@@ -316,12 +345,12 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   placeholder="e.g. 600001"
                   value={formData.pincode}
                   onChange={handleChange}
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
+                <label className="block text-slate-700 font-semibold mb-1">
                   Special Delivery Instructions
                 </label>
                 <input
@@ -330,7 +359,7 @@ export default function CheckoutModal({ isOpen, onClose }) {
                   placeholder="e.g. Call before delivery"
                   value={formData.delivery_notes}
                   onChange={handleChange}
-                  className="w-full p-2.5 rounded-lg bg-midnight-900 border border-slate-700 focus:border-festive-gold text-white text-xs outline-none"
+                  className="w-full p-2.5 rounded-lg bg-slate-50 border border-slate-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100 text-slate-900 text-xs outline-none transition-all"
                 />
               </div>
             </div>
@@ -340,13 +369,13 @@ export default function CheckoutModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-festive-red via-festive-red-light to-festive-red text-white font-extrabold text-sm shadow-lg shadow-festive-red/40 hover:brightness-110 active:scale-98 transition-all border border-festive-gold/40 flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white font-extrabold text-sm shadow-md hover:brightness-110 active:scale-98 transition-all border border-red-700 flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <span>Processing Order...</span>
                 ) : (
                   <>
-                    <Sparkles className="w-4 h-4 text-festive-yellow" />
+                    <Sparkles className="w-4 h-4 text-amber-200" />
                     <span>CONFIRM & PLACE ORDER (₹{total})</span>
                   </>
                 )}

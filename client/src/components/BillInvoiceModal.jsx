@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Printer, MessageSquare, X, Plus, Trash2, Check, Download, 
-  Building2, Phone, Calendar, User, MapPin, Hash, Sparkles, AlertCircle
+  Smartphone, Phone, Calendar, User, MapPin, Hash, Sparkles, AlertCircle
 } from 'lucide-react';
 
 function numberToWords(num) {
@@ -20,6 +20,36 @@ function numberToWords(num) {
 
   const rounded = Math.round(num);
   return 'Rupees ' + inWords(rounded) + ' Only';
+}
+
+function parseOrderItems(order) {
+  if (!order || !order.items) return [];
+  let raw = order.items;
+  if (typeof raw === 'string') {
+    try {
+      raw = JSON.parse(raw);
+    } catch (e) {
+      raw = [];
+    }
+  }
+  if (!Array.isArray(raw)) return [];
+
+  return raw.map(it => {
+    const orig = parseFloat(it.original_price || it.price || (it.offer_price ? it.offer_price * 4 : 0));
+    const disc = it.discount_percent !== undefined ? it.discount_percent : 75;
+    const offer = parseFloat(it.offer_price !== undefined ? it.offer_price : (orig ? Math.round(orig * (1 - disc / 100)) : 0));
+    const qty = parseInt(it.quantity) || 1;
+    return {
+      id: it.id || it.product_id || Math.random(),
+      name: it.name || it.product_name || 'Cracker Item',
+      pack_size: it.pack_size || 'Box',
+      original_price: orig,
+      discount_percent: disc,
+      offer_price: offer,
+      quantity: qty,
+      total: it.total !== undefined ? parseFloat(it.total) : (offer * qty)
+    };
+  });
 }
 
 export default function BillInvoiceModal({ 
@@ -42,35 +72,40 @@ export default function BillInvoiceModal({
   });
 
   const [customerName, setCustomerName] = useState(order?.customer_name || '');
-  const [customerPhone, setCustomerPhone] = useState(order?.phone_number || order?.whatsapp_number || '');
+  const [customerPhone, setCustomerPhone] = useState(order?.phone_number || order?.whatsapp_number || order?.phone || '');
   const [customerAddress, setCustomerAddress] = useState(order?.address || '');
   const [customerCity, setCustomerCity] = useState(order?.city || 'Tamil Nadu');
   const [paymentMode, setPaymentMode] = useState(order?.payment_method || 'Cash / UPI');
-  const [packagingCharge, setPackagingCharge] = useState(0);
-  const [deliveryCharge, setDeliveryCharge] = useState(0);
+  const [packagingCharge, setPackagingCharge] = useState(order?.packaging_charge || 0);
+  const [deliveryCharge, setDeliveryCharge] = useState(order?.delivery_charge || 0);
+  const [items, setItems] = useState(() => parseOrderItems(order));
 
-  // Items list
-  const [items, setItems] = useState(() => {
-    if (order?.items && Array.isArray(order.items) && order.items.length > 0) {
-      return order.items.map(it => {
-        const orig = parseFloat(it.original_price || it.offer_price * 4 || 0);
-        const offer = parseFloat(it.offer_price || 0);
-        const disc = it.discount_percent || 75;
-        const qty = it.quantity || 1;
-        return {
-          id: it.id || it.product_id || Math.random(),
-          name: it.name || it.product_name || 'Cracker Item',
-          pack_size: it.pack_size || 'Box',
-          original_price: orig,
-          discount_percent: disc,
-          offer_price: offer,
-          quantity: qty,
-          total: offer * qty
-        };
-      });
+  // Sync state whenever order prop changes or modal is re-opened
+  useEffect(() => {
+    if (order) {
+      setInvoiceNumber(order.order_number || `SJC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`);
+      setInvoiceDate(order.created_at ? new Date(order.created_at).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]);
+      setCustomerName(order.customer_name || '');
+      setCustomerPhone(order.phone_number || order.whatsapp_number || order.phone || '');
+      setCustomerAddress(order.address || '');
+      setCustomerCity(order.city || 'Tamil Nadu');
+      setPaymentMode(order.payment_method || 'Cash / UPI');
+      setPackagingCharge(order.packaging_charge || 0);
+      setDeliveryCharge(order.delivery_charge || 0);
+      setItems(parseOrderItems(order));
+    } else {
+      setInvoiceNumber(`SJC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`);
+      setInvoiceDate(new Date().toISOString().split('T')[0]);
+      setCustomerName('');
+      setCustomerPhone('');
+      setCustomerAddress('');
+      setCustomerCity('Tamil Nadu');
+      setPaymentMode('Cash / UPI');
+      setPackagingCharge(0);
+      setDeliveryCharge(0);
+      setItems([]);
     }
-    return [];
-  });
+  }, [order]);
 
   // Product Picker for counter billing
   const [selectedProductId, setSelectedProductId] = useState('');
@@ -127,8 +162,14 @@ export default function BillInvoiceModal({
   };
 
   // Calculations
-  const grossTotal = items.reduce((sum, it) => sum + (parseFloat(it.original_price || it.offer_price * 4) * it.quantity), 0);
-  const netItemsTotal = items.reduce((sum, it) => sum + it.total, 0);
+  const grossTotal = items.reduce((sum, it) => {
+    const orig = parseFloat(it.original_price || (it.offer_price ? it.offer_price * 4 : 0));
+    return sum + (orig * it.quantity);
+  }, 0);
+  const netItemsTotal = items.reduce((sum, it) => {
+    const offer = parseFloat(it.offer_price || 0);
+    return sum + (offer * it.quantity);
+  }, 0);
   const discountSavings = Math.max(0, grossTotal - netItemsTotal);
   const grandTotal = Math.round(netItemsTotal + parseFloat(packagingCharge || 0) + parseFloat(deliveryCharge || 0));
 
@@ -137,20 +178,17 @@ export default function BillInvoiceModal({
   };
 
   const handleSendWhatsApp = () => {
-    if (!customerPhone) {
-      alert('Please enter a customer phone number first.');
-      return;
-    }
+    const itemsSummary = items.length > 0 
+      ? items.map((it, idx) => 
+          `${idx + 1}. ${it.name} (${it.pack_size || 'Box'}) x ${it.quantity} = ₹${it.total || (it.offer_price * it.quantity)}`
+        ).join('\n')
+      : 'No items listed';
 
-    const itemsSummary = items.map((it, idx) => 
-      `${idx + 1}. ${it.name} (${it.pack_size}) x ${it.quantity} = ₹${it.total}`
-    ).join('\n');
-
-    const msg = `*🎇 SRI JEYAM CRACKERS - SIVAKASI*\n*ESTIMATE / TAX BILL*\n\n` +
+    const msg = `*🎇 SRI JEYAM CRACKERS - SIVAKASI*\n*OFFICIAL ESTIMATE / TAX BILL*\n\n` +
       `*Bill No:* ${invoiceNumber}\n` +
       `*Date:* ${invoiceDate}\n` +
       `*Customer:* ${customerName || 'Valued Customer'}\n` +
-      `*Phone:* ${customerPhone}\n\n` +
+      `*Phone:* ${customerPhone || 'N/A'}\n\n` +
       `*Order Items:*\n${itemsSummary}\n\n` +
       `-----------------------------\n` +
       `*Actual MRP Total:* ₹${Math.round(grossTotal)}\n` +
@@ -159,17 +197,18 @@ export default function BillInvoiceModal({
       (parseFloat(deliveryCharge) > 0 ? `*Delivery/Transport:* +₹${deliveryCharge}\n` : '') +
       `*NET PAYABLE AMOUNT:* *₹${grandTotal}*\n` +
       `-----------------------------\n\n` +
-      `*💳 Payment Details:*\n` +
-      `*ICICI Bank:* 603801551488\n` +
-      `*IFSC:* ICIC0006037\n` +
-      `*Account Name:* B RAJESHKANNAN\n` +
+      `*💳 Payment Details (UPI):*\n` +
       `*GPay / PhonePe / Paytm:* 8939910664\n` +
       `*UPI ID:* 8939910664@icici\n\n` +
       `*Contact:* 6380115587 / 9363243938\n` +
       `Thank you for choosing Sri Jeyam Crackers Sivakasi! 🎆`;
 
-    const cleanPhone = customerPhone.replace(/[^0-9]/g, '').slice(-10);
-    window.open(`https://wa.me/91${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+    const cleanPhone = customerPhone ? customerPhone.replace(/[^0-9]/g, '').slice(-10) : '';
+    if (cleanPhone && cleanPhone.length === 10) {
+      window.open(`https://wa.me/91${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+    } else {
+      window.open(`https://wa.me/916370115587?text=${encodeURIComponent(msg)}`, '_blank');
+    }
   };
 
   const handleSaveAsOrder = () => {
@@ -204,18 +243,18 @@ export default function BillInvoiceModal({
   );
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-sm">
-      <div className="w-full max-w-4xl bg-midnight-950 border border-festive-gold/60 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="print-bill-modal-overlay fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-xs">
+      <div className="print-bill-modal-content w-full max-w-4xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Top Header Bar - Hidden in Print */}
-        <div className="no-print bg-midnight-900 border-b border-festive-gold/30 p-4 flex items-center justify-between">
+        <div className="no-print bg-slate-50 border-b border-slate-200 p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl diya-glow">🪔</span>
             <div>
-              <h2 className="text-base font-black font-poster text-gold-gradient">
+              <h2 className="text-base font-black font-poster text-slate-900">
                 Official Bill & Tax Invoice Generator
               </h2>
-              <p className="text-[11px] text-slate-300">
+              <p className="text-[11px] text-slate-500">
                 Print A4 invoice, WhatsApp bill receipt, or direct counter billing
               </p>
             </div>
@@ -243,7 +282,7 @@ export default function BillInvoiceModal({
             {onSaveOrder && !order?.id && (
               <button
                 onClick={handleSaveAsOrder}
-                className="px-3 py-1.5 rounded-xl bg-festive-red hover:bg-festive-red-light text-white font-bold text-xs flex items-center gap-1.5 shadow"
+                className="px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-1.5 shadow"
               >
                 <Check className="w-4 h-4" />
                 <span>Save as Order</span>
@@ -252,7 +291,7 @@ export default function BillInvoiceModal({
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+              className="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -260,9 +299,9 @@ export default function BillInvoiceModal({
         </div>
 
         {/* Counter Billing Product Selector - Hidden in Print */}
-        <div className="no-print bg-midnight-900/60 border-b border-slate-800 p-3 sm:p-4 text-xs space-y-2">
-          <div className="font-bold text-festive-yellow flex items-center gap-1.5">
-            <Plus className="w-4 h-4" />
+        <div className="no-print bg-slate-50 border-b border-slate-200 p-3 sm:p-4 text-xs space-y-2">
+          <div className="font-bold text-slate-900 flex items-center gap-1.5">
+            <Plus className="w-4 h-4 text-red-600" />
             <span>Counter Billing / Add Crackers to this Bill:</span>
           </div>
 
@@ -271,7 +310,7 @@ export default function BillInvoiceModal({
               <select
                 value={selectedProductId}
                 onChange={(e) => setSelectedProductId(e.target.value)}
-                className="w-full p-2 rounded-lg bg-midnight-950 border border-slate-700 text-white text-xs outline-none focus:border-festive-gold"
+                className="w-full p-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs outline-none focus:border-red-500"
               >
                 <option value="">-- Choose Cracker from Catalog ({products.length} items) --</option>
                 {products.map(p => (
@@ -283,13 +322,13 @@ export default function BillInvoiceModal({
             </div>
 
             <div className="sm:col-span-2 flex items-center gap-1">
-              <span className="text-slate-400">Qty:</span>
+              <span className="text-slate-500">Qty:</span>
               <input
                 type="number"
                 min="1"
                 value={addQty}
                 onChange={(e) => setAddQty(Math.max(1, parseInt(e.target.value) || 1))}
-                className="w-full p-2 rounded-lg bg-midnight-950 border border-slate-700 text-white text-center font-bold text-xs outline-none"
+                className="w-full p-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-center font-bold text-xs outline-none"
               />
             </div>
 
@@ -298,7 +337,7 @@ export default function BillInvoiceModal({
                 type="button"
                 onClick={handleAddItem}
                 disabled={!selectedProductId}
-                className="w-full py-2 rounded-lg bg-gradient-to-r from-festive-red to-festive-red-light disabled:opacity-50 text-white font-bold text-xs flex items-center justify-center gap-1"
+                className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-bold text-xs flex items-center justify-center gap-1"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Cracker</span>
@@ -308,7 +347,7 @@ export default function BillInvoiceModal({
         </div>
 
         {/* Scrollable Document Area */}
-        <div className="flex-1 overflow-y-auto p-3 sm:p-6 bg-slate-900/40">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-6 bg-slate-100/70">
           
           {/* THE OFFICIAL PRINTABLE INVOICE BILL */}
           <div className="print-bill-container bg-white text-slate-900 rounded-2xl shadow-xl p-6 sm:p-8 max-w-3xl mx-auto border border-slate-200">
@@ -497,21 +536,17 @@ export default function BillInvoiceModal({
             {/* TOTALS & SUMMARY SECTION */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 border-t-2 border-slate-800 pt-4 mb-4 text-xs">
               
-              {/* Left Column: Bank & UPI Info on the Bill */}
+              {/* Left Column: UPI Info on the Bill */}
               <div className="sm:col-span-7 space-y-2.5">
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
                   <div className="text-[11px] font-black uppercase text-slate-800 flex items-center gap-1">
-                    <Building2 className="w-3.5 h-3.5 text-blue-700" />
-                    <span>Official Bank Transfer & UPI Details</span>
+                    <Smartphone className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Payment Details (GPay / PhonePe / UPI)</span>
                   </div>
                   <div className="text-[11px] text-slate-700 space-y-0.5">
-                    <div>Bank: <strong>ICICI BANK</strong> • Branch: <strong>Sivakasi / Chennai</strong></div>
-                    <div>A/C Name: <strong>B RAJESHKANNAN</strong></div>
-                    <div>Account No: <strong className="font-mono text-slate-900 text-xs">603801551488</strong></div>
-                    <div>IFSC Code: <strong className="font-mono text-slate-900">ICIC0006037</strong></div>
-                    <div className="pt-1 text-emerald-800 font-bold">
-                      GPay / PhonePe UPI: <strong className="font-mono">8939910664</strong> (@icici)
-                    </div>
+                    <div>GPay / PhonePe / Paytm: <strong className="font-mono text-slate-900 font-bold">8939910664</strong></div>
+                    <div>UPI ID: <strong className="font-mono text-slate-900 font-bold">8939910664@icici</strong></div>
+                    <div className="text-[10px] text-slate-500 pt-0.5">Please share payment screenshot for instant dispatch.</div>
                   </div>
                 </div>
 

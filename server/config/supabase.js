@@ -19,6 +19,27 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   }
 });
 
+// Direct PostgreSQL Connection Pool for sub-100ms bulk database updates
+let pgPool = null;
+if (process.env.DATABASE_URL) {
+  try {
+    const { Pool } = require('pg');
+    pgPool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: process.env.DATABASE_URL.includes('localhost') ? false : { rejectUnauthorized: false }
+    });
+  } catch (err) {
+    console.warn('Could not initialize PG pool:', err.message);
+  }
+}
+
+async function queryDatabase(text, params = []) {
+  if (pgPool) {
+    return await pgPool.query(text, params);
+  }
+  return null;
+}
+
 // Resilient Local Store file path (safe for both local server and Vercel serverless)
 const DATA_FILE = path.join(__dirname, '..', 'data', 'store.json');
 
@@ -118,6 +139,8 @@ async function checkSupabaseStatus() {
 
 module.exports = {
   supabase,
+  pgPool,
+  queryDatabase,
   loadLocalStore,
   saveLocalStore,
   checkSupabaseStatus

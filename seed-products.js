@@ -302,11 +302,6 @@ try {
 currentStore.categories = categories;
 currentStore.products = products;
 currentStore.payment_details = {
-  bank_name: 'ICICI BANK',
-  account_name: 'B RAJESHKANNAN',
-  account_no: '603801551488',
-  ifsc_code: 'ICIC0006037',
-  branch: 'CHENNAI',
   gpay_phonepe: '8939910664',
   upi_id: '8939910664@icici'
 };

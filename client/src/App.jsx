@@ -7,10 +7,12 @@ import ProductCatalog from './components/ProductCatalog';
 import SafetyTips from './components/SafetyTips';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
+import FloatingCartPopBox from './components/FloatingCartPopBox';
 import CheckoutModal from './components/CheckoutModal';
 import OrderTrackModal from './components/OrderTrackModal';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import BillInvoiceModal from './components/BillInvoiceModal';
 import { api } from './utils/api';
 
 export default function App() {
@@ -31,6 +33,13 @@ export default function App() {
 
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isTrackOpen, setIsTrackOpen] = useState(false);
+  const [billModalOrder, setBillModalOrder] = useState(null);
+  const [isBillModalOpen, setIsBillModalOpen] = useState(false);
+
+  // Active discount percent derived from products catalog
+  const discountPercent = products.length > 0 && products[0]?.discount_percent !== undefined 
+    ? products[0].discount_percent 
+    : 75;
 
   // Sync with browser URL navigation
   useEffect(() => {
@@ -108,7 +117,7 @@ export default function App() {
   // Route 2: Public Customer Storefront (NO admin button shown, frictionless guest shopping)
   return (
     <CartProvider>
-      <div className="relative min-h-screen bg-midnight-950 text-slate-100 flex flex-col font-sans">
+      <div className="relative min-h-screen bg-white text-slate-900 flex flex-col font-sans">
         {/* Animated Fireworks Canvas Particles */}
         <FireworksCanvas />
 
@@ -116,6 +125,7 @@ export default function App() {
         <Navbar
           onOpenTrack={() => setIsTrackOpen(true)}
           onNavigateHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          discountPercent={discountPercent}
         />
 
         {/* Hero Section based on Poster */}
@@ -125,6 +135,7 @@ export default function App() {
               const el = document.getElementById('catalog');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
+            discountPercent={discountPercent}
           />
 
           {/* Crackers Catalog (With all 214 products from the price list) */}
@@ -138,10 +149,15 @@ export default function App() {
         </main>
 
         {/* Footer with shop contact numbers: 6380115587 / 9363243938 */}
-        <Footer />
+        <Footer discountPercent={discountPercent} />
 
-        {/* Cart Drawer */}
+        {/* Full Cart Drawer (Can be opened from top navbar) */}
         <CartDrawer
+          onProceedCheckout={() => setIsCheckoutOpen(true)}
+        />
+
+        {/* Right-Side Down Corner Pop Box & Add to Cart Toast Widget */}
+        <FloatingCartPopBox
           onProceedCheckout={() => setIsCheckoutOpen(true)}
         />
 
@@ -149,13 +165,33 @@ export default function App() {
         <CheckoutModal
           isOpen={isCheckoutOpen}
           onClose={() => setIsCheckoutOpen(false)}
+          onViewBill={(order) => {
+            setBillModalOrder(order);
+            setIsBillModalOpen(true);
+          }}
         />
 
         {/* Order Tracking Modal */}
         <OrderTrackModal
           isOpen={isTrackOpen}
           onClose={() => setIsTrackOpen(false)}
+          onViewBill={(order) => {
+            setBillModalOrder(order);
+            setIsBillModalOpen(true);
+          }}
         />
+
+        {/* Storefront Bill / Invoice Modal */}
+        {isBillModalOpen && (
+          <BillInvoiceModal
+            order={billModalOrder}
+            products={products}
+            onClose={() => {
+              setIsBillModalOpen(false);
+              setBillModalOrder(null);
+            }}
+          />
+        )}
       </div>
     </CartProvider>
   );

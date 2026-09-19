@@ -16,6 +16,8 @@ export const CartProvider = ({ children }) => {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isFloatingCartOpen, setIsFloatingCartOpen] = useState(false);
+  const [lastAddedItem, setLastAddedItem] = useState(null);
 
   useEffect(() => {
     try {
@@ -35,7 +37,8 @@ export const CartProvider = ({ children }) => {
       }
       return [...prev, { product, quantity: qty }];
     });
-    setIsCartOpen(true);
+    // Trigger festive bottom-right corner pop box
+    setLastAddedItem({ product, quantity: qty, timestamp: Date.now() });
   };
 
   const updateQuantity = (productId, qty) => {
@@ -88,7 +91,11 @@ export const CartProvider = ({ children }) => {
         isCartOpen,
         setIsCartOpen,
         isCheckoutOpen,
-        setIsCheckoutOpen
+        setIsCheckoutOpen,
+        isFloatingCartOpen,
+        setIsFloatingCartOpen,
+        lastAddedItem,
+        setLastAddedItem
       }}
     >
       {children}

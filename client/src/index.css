@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #050816;
+  background-color: #ffffff;
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(26, 42, 108, 0.45) 0%, transparent 60%),
-    radial-gradient(circle at 10% 20%, rgba(198, 16, 33, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 30%, rgba(255, 196, 0, 0.15) 0%, transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(15, 23, 42, 0.8) 0%, transparent 70%);
+    radial-gradient(circle at 50% 0%, rgba(254, 243, 199, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 10% 25%, rgba(254, 226, 226, 0.35) 0%, transparent 35%),
+    radial-gradient(circle at 90% 35%, rgba(254, 240, 138, 0.3) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(241, 245, 249, 0.8) 0%, transparent 60%);
   background-attachment: fixed;
-  color: #f8fafc;
+  color: #0f172a;
   overflow-x: hidden;
 }
 
@@ -28,57 +28,54 @@ body {
 }
 
 .text-gold-gradient {
-  background: linear-gradient(180deg, #fff2a6 0%, #ffd000 45%, #e6a800 70%, #b37d00 100%);
+  background: linear-gradient(135deg, #b45309 0%, #d97706 45%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(255, 208, 0, 0.4));
+  filter: drop-shadow(0 1px 2px rgba(180, 83, 9, 0.2));
 }
 
 .text-gold-3d {
-  color: #ffd000;
+  color: #b45309;
   text-shadow: 
-    0 1px 0 #b37d00,
-    0 2px 0 #996a00,
-    0 3px 0 #805700,
-    0 4px 6px rgba(0, 0, 0, 0.7);
+    0 1px 0 #fde68a,
+    0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .text-red-3d {
-  color: #ffffff;
+  color: #c61021;
   text-shadow: 
-    0 2px 4px rgba(138, 6, 20, 0.9),
-    0 0 20px rgba(229, 34, 51, 0.6);
+    0 1px 2px rgba(198, 16, 33, 0.25);
 }
 
 /* Festive 3D Ribbon Banner */
 .ribbon-banner {
-  background: linear-gradient(135deg, #d61a29 0%, #a80a18 50%, #d61a29 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  border: 2px solid #ffd000;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #dc2626 100%);
+  box-shadow: 0 6px 20px rgba(185, 28, 28, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  border: 2px solid #fbbf24;
   position: relative;
 }
 
 /* Starburst Discount Badge */
 .starburst-badge {
-  background: radial-gradient(circle, #ffe600 0%, #ffbe00 60%, #e69500 100%);
-  box-shadow: 0 0 25px rgba(255, 208, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.8);
-  border: 3px dashed #c61021;
+  background: radial-gradient(circle, #fef08a 0%, #fde047 50%, #facc15 100%);
+  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.9);
+  border: 3px dashed #dc2626;
 }
 
 /* Diya Lamp Glow Effect */
 .diya-glow {
-  filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.85)) drop-shadow(0 0 24px rgba(255, 196, 0, 0.5));
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
 }
 
 /* Gold Border Glow */
 .gold-glow-border {
-  border: 1px solid rgba(255, 208, 0, 0.4);
-  box-shadow: 0 0 15px rgba(255, 208, 0, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15);
 }
 
 .gold-glow-border:hover {
-  border-color: rgba(255, 208, 0, 0.8);
-  box-shadow: 0 0 25px rgba(255, 208, 0, 0.4);
+  border-color: rgba(217, 119, 6, 0.9);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
 }
 
 /* Custom Scrollbar */
@@ -87,14 +84,14 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070b1e;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ffd000, #c61021);
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffd000;
+  background: #dc2626;
 }
 
 /* Print Styles for Official Invoices / Bills */
@@ -110,6 +107,8 @@ body {
   header,
   footer,
   nav,
+  aside,
+  button,
   .no-print-area {
     display: none !important;
   }
@@ -118,17 +117,48 @@ body {
     display: block !important;
   }
 
+  .print-bill-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    backdrop-filter: none !important;
+    z-index: auto !important;
+  }
+
+  .print-bill-modal-content {
+    position: static !important;
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
   .print-bill-container {
     position: static !important;
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 10px !important;
+    padding: 8px !important;
     background: #ffffff !important;
     color: #111827 !important;
     box-shadow: none !important;
     border: none !important;
     font-size: 11px !important;
+    page-break-after: auto !important;
   }
 
   .print-bill-container * {
@@ -142,7 +172,7 @@ body {
 
   th, td {
     border: 1px solid #94a3b8 !important;
-    padding: 5px 6px !important;
+    padding: 4px 6px !important;
     color: #000000 !important;
   }
 
@@ -153,6 +183,6 @@ body {
 
   @page {
     size: A4 portrait;
-    margin: 8mm;
+    margin: 6mm;
   }
 }

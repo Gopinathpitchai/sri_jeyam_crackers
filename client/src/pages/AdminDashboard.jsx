@@ -39,6 +39,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
   // Batch Discount
   const [batchCategory, setBatchCategory] = useState('all');
   const [batchDiscount, setBatchDiscount] = useState('75');
+  const [isBatchUpdating, setIsBatchUpdating] = useState(false);
 
   // Single Product Form
   const [productForm, setProductForm] = useState({
@@ -239,10 +240,12 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
       return;
     }
 
+    setIsBatchUpdating(true);
     try {
       await api.batchUpdateDiscounts(batchCategory, disc, token);
       setProducts(prev => prev.map(p => {
-        if (batchCategory === 'all' || p.category.toLowerCase() === batchCategory.toLowerCase()) {
+        const matches = batchCategory === 'all' || (p.category && p.category.toLowerCase() === batchCategory.toLowerCase());
+        if (matches) {
           const orig = parseFloat(p.original_price || 0);
           return {
             ...p,
@@ -252,9 +255,23 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         }
         return p;
       }));
-      showNotification(`Successfully updated discounts to ${disc}%!`);
+
+      // Refresh products from API to ensure complete sync
+      const freshProds = await api.getProducts().catch(() => null);
+      if (freshProds && freshProds.length > 0) {
+        setProducts(freshProds);
+      }
+
+      if (batchCategory === 'all') {
+        setSettings(prev => prev ? { ...prev, discount_percent: disc } : prev);
+        setProductForm(prev => ({ ...prev, discount_percent: disc }));
+      }
+
+      showNotification(`🎉 Successfully updated discounts to ${disc}%! All cracker prices updated.`);
     } catch (err) {
       alert(err.message || 'Failed to update batch discount');
+    } finally {
+      setIsBatchUpdating(false);
     }
   };
 
@@ -557,9 +574,21 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
                 <button
                   onClick={handleApplyBatchDiscount}
-                  className="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs shadow transition-all"
+                  disabled={isBatchUpdating}
+                  className={`px-3 py-1.5 rounded-lg text-white font-bold text-xs shadow transition-all flex items-center gap-1.5 ${
+                    isBatchUpdating 
+                      ? 'bg-amber-800 cursor-not-allowed opacity-80' 
+                      : 'bg-amber-600 hover:bg-amber-500 active:scale-95'
+                  }`}
                 >
-                  Apply to Category
+                  {isBatchUpdating ? (
+                    <>
+                      <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                      <span>Applying {batchDiscount}%...</span>
+                    </>
+                  ) : (
+                    <span>Apply to Category</span>
+                  )}
                 </button>
               </div>
 
@@ -803,25 +832,14 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         {/* TAB 3: DATABASE & PAYMENT DETAILS */}
         {activeTab === 'database' && (
           <div className="space-y-6">
-            {/* Bank & Payment Information (From Page 15 of Price List) */}
+            {/* Shop Payment Information */}
             <div className="p-5 bg-midnight-900 rounded-2xl border border-festive-gold/40 space-y-4">
               <div className="flex items-center gap-2 text-festive-yellow font-bold text-sm">
-                <Building2 className="w-5 h-5" />
-                <span>Shop Bank Account & Payment Details</span>
+                <Smartphone className="w-5 h-5" />
+                <span>Shop UPI & Digital Payment Details</span>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                <div className="bg-midnight-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                  <div className="text-amber-300 font-bold text-sm">🏦 Bank Account Transfer</div>
-                  <div className="space-y-1 text-slate-300">
-                    <div>Bank: <strong className="text-white">ICICI BANK</strong></div>
-                    <div>Account Name: <strong className="text-white">B RAJESHKANNAN</strong></div>
-                    <div>Account Number: <strong className="text-white font-mono">603801551488</strong></div>
-                    <div>IFSC Code: <strong className="text-white font-mono">ICIC0006037</strong></div>
-                    <div>Branch: <strong className="text-white">CHENNAI</strong></div>
-                  </div>
-                </div>
-
+              <div className="max-w-md text-xs">
                 <div className="bg-midnight-950 p-4 rounded-xl border border-slate-800 space-y-2">
                   <div className="text-emerald-400 font-bold text-sm">📱 GPay / PhonePe / Paytm</div>
                   <div className="space-y-1 text-slate-300">

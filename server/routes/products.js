@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { requireAdmin } = require('../middleware/auth');
-const { supabase, loadLocalStore, saveLocalStore } = require('../config/supabase');
+const { supabase, queryDatabase, loadLocalStore, saveLocalStore } = require('../config/supabase');
 
 // Helper to check if Supabase table is usable
 async function useSupabaseProducts() {
@@ -260,14 +260,36 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
     return res.status(400).json({ error: 'Valid discount percent is required (0-100)' });
   }
 
+  const isAll = !category || category === 'all';
+  const catParam = isAll ? 'all' : category.trim();
+
   try {
-    const store = loadLocalStore();
     let updatedCount = 0;
+
+    // 1. Instant PostgreSQL Pool Query if available (executes in <50ms)
+    try {
+      const sql = `
+        UPDATE products 
+        SET discount_percent = $1,
+            offer_price = ROUND(original_price * (100 - $1) / 100),
+            updated_at = NOW()
+        WHERE ($2 = 'all' OR LOWER(category) = LOWER($2))
+        RETURNING id;
+      `;
+      const pgRes = await queryDatabase(sql, [disc, catParam]);
+      if (pgRes && pgRes.rowCount !== undefined) {
+        updatedCount = pgRes.rowCount;
+      }
+    } catch (pgErr) {
+      console.warn('Direct PG batch discount update failed, trying Supabase fallback:', pgErr.message);
+    }
+
+    // 2. Synchronize local store
+    const store = loadLocalStore();
     store.products = (store.products || []).map(p => {
-      if (!category || category === 'all' || p.category.toLowerCase() === category.toLowerCase()) {
+      if (isAll || (p.category && p.category.toLowerCase() === catParam.toLowerCase())) {
         const orig = parseFloat(p.original_price || 0);
         const newOffer = Math.round(orig * (1 - disc / 100));
-        updatedCount++;
         return {
           ...p,
           discount_percent: disc,
@@ -278,22 +300,46 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
       return p;
     });
 
+    if (isAll) {
+      store.site_settings = store.site_settings || {};
+      store.site_settings.discount_percent = disc;
+    }
     saveLocalStore(store);
 
+    if (updatedCount === 0) {
+      updatedCount = isAll ? store.products.length : store.products.filter(p => p.category && p.category.toLowerCase() === catParam.toLowerCase()).length;
+    }
+
+    // 3. If PG wasn't used or fallback needed, update Supabase in parallel batches
     const hasSupabase = await useSupabaseProducts();
-    if (hasSupabase) {
-      for (const p of store.products) {
-        await supabase.from('products').update({
-          discount_percent: p.discount_percent,
-          offer_price: p.offer_price
-        }).eq('id', p.id);
+    if (hasSupabase && updatedCount === 0) {
+      const matching = store.products.filter(p => isAll || (p.category && p.category.toLowerCase() === catParam.toLowerCase()));
+      // Update in chunks of 25 in parallel
+      for (let i = 0; i < matching.length; i += 25) {
+        const chunk = matching.slice(i, i + 25);
+        await Promise.all(chunk.map(p => 
+          supabase.from('products').update({
+            discount_percent: p.discount_percent,
+            offer_price: p.offer_price,
+            updated_at: new Date().toISOString()
+          }).eq('id', p.id)
+        ));
+      }
+    }
+
+    // Also update site_settings discount_percent in Supabase if category is all
+    if (isAll && hasSupabase) {
+      try {
+        await supabase.from('site_settings').update({ discount_percent: disc }).eq('id', 'default');
+      } catch (sErr) {
+        console.warn('Could not update site_settings discount in Supabase:', sErr.message);
       }
     }
 
     return res.json({ success: true, updatedCount, discount_percent: disc });
   } catch (err) {
     console.error('Error updating batch discounts:', err);
-    return res.status(500).json({ error: 'Failed to update discounts' });
+    return res.status(500).json({ error: 'Failed to update discounts: ' + err.message });
   }
 });
 
