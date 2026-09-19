@@ -302,8 +302,8 @@ try {
 currentStore.categories = categories;
 currentStore.products = products;
 currentStore.payment_details = {
-  gpay_phonepe: '8939910664',
-  upi_id: '8939910664@icici'
+  gpay_phonepe: '6380115587',
+  upi_id: '6380115587@upi'
 };
 
 fs.writeFileSync(storePath, JSON.stringify(currentStore, null, 2), 'utf8');

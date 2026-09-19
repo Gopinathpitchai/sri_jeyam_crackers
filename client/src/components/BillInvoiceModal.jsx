@@ -198,8 +198,8 @@ export default function BillInvoiceModal({
       `*NET PAYABLE AMOUNT:* *₹${grandTotal}*\n` +
       `-----------------------------\n\n` +
       `*💳 Payment Details (UPI):*\n` +
-      `*GPay / PhonePe / Paytm:* 8939910664\n` +
-      `*UPI ID:* 8939910664@icici\n\n` +
+      `*GPay / PhonePe / Paytm:* 63801 15587\n` +
+      `*UPI ID:* 6380115587@upi\n\n` +
       `*Contact:* 6380115587 / 9363243938\n` +
       `Thank you for choosing Sri Jeyam Crackers Sivakasi! 🎆`;
 
@@ -207,7 +207,7 @@ export default function BillInvoiceModal({
     if (cleanPhone && cleanPhone.length === 10) {
       window.open(`https://wa.me/91${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
     } else {
-      window.open(`https://wa.me/916370115587?text=${encodeURIComponent(msg)}`, '_blank');
+      window.open(`https://wa.me/916380115587?text=${encodeURIComponent(msg)}`, '_blank');
     }
   };
 
@@ -544,8 +544,8 @@ export default function BillInvoiceModal({
                     <span>Payment Details (GPay / PhonePe / UPI)</span>
                   </div>
                   <div className="text-[11px] text-slate-700 space-y-0.5">
-                    <div>GPay / PhonePe / Paytm: <strong className="font-mono text-slate-900 font-bold">8939910664</strong></div>
-                    <div>UPI ID: <strong className="font-mono text-slate-900 font-bold">8939910664@icici</strong></div>
+                    <div>GPay / PhonePe / Paytm: <strong className="font-mono text-slate-900 font-bold">63801 15587</strong></div>
+                    <div>UPI ID: <strong className="font-mono text-slate-900 font-bold">6380115587@upi</strong></div>
                     <div className="text-[10px] text-slate-500 pt-0.5">Please share payment screenshot for instant dispatch.</div>
                   </div>
                 </div>

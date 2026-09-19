@@ -22,8 +22,10 @@ function ensureUploadDir() {
   }
 }
 
+const { supabase } = require('../config/supabase');
+
 // POST /api/upload (Admin only)
-router.post('/', requireAdmin, (req, res) => {
+router.post('/', requireAdmin, async (req, res) => {
   try {
     const { image, filename } = req.body;
 
@@ -49,21 +51,70 @@ router.post('/', requireAdmin, (req, res) => {
       .replace(/[^a-zA-Z0-9_-]/g, '_')
       .substring(0, 30);
     const newFilename = `${cleanBaseName}_${Date.now()}.${ext}`;
-    
-    ensureUploadDir();
-    const filePath = path.join(uploadDir, newFilename);
-    fs.writeFileSync(filePath, buffer);
 
-    const relativeUrl = `/images/uploads/${newFilename}`;
-    console.log(`[Upload] Image saved: ${relativeUrl} (${Math.round(buffer.length / 1024)} KB)`);
+    // 1. Primary: Upload to Supabase Storage for permanent global CDN hosting
+    if (supabase && supabase.storage) {
+      try {
+        const contentType = `image/${ext === 'jpg' ? 'jpeg' : ext}`;
+        const { data: uploadData, error: uploadErr } = await supabase.storage
+          .from('product-images')
+          .upload(newFilename, buffer, {
+            contentType,
+            upsert: true
+          });
 
+        if (!uploadErr) {
+          const { data: urlData } = supabase.storage
+            .from('product-images')
+            .getPublicUrl(newFilename);
+
+          if (urlData && urlData.publicUrl) {
+            console.log(`[Upload] Image uploaded to Supabase Storage: ${urlData.publicUrl}`);
+
+            // Also keep local copy if running on local server
+            if (!isVercel) {
+              try {
+                ensureUploadDir();
+                fs.writeFileSync(path.join(uploadDir, newFilename), buffer);
+              } catch (_) {}
+            }
+
+            return res.json({
+              success: true,
+              url: urlData.publicUrl,
+              size: buffer.length
+            });
+          }
+        } else {
+          console.warn('[Upload] Supabase Storage warning:', uploadErr.message);
+        }
+      } catch (storageErr) {
+        console.warn('[Upload] Storage exception, falling back:', storageErr.message);
+      }
+    }
+
+    // 2. Localhost fallback
+    if (!isVercel) {
+      ensureUploadDir();
+      const filePath = path.join(uploadDir, newFilename);
+      fs.writeFileSync(filePath, buffer);
+      const relativeUrl = `/images/uploads/${newFilename}`;
+      console.log(`[Upload] Image saved locally: ${relativeUrl}`);
+      return res.json({
+        success: true,
+        url: relativeUrl,
+        size: buffer.length
+      });
+    }
+
+    // 3. Fallback for serverless if storage is not reachable: return full base64 data URL
     return res.json({
       success: true,
-      url: relativeUrl,
-      size: buffer.length
+      url: image,
+      fallback: true
     });
   } catch (err) {
-    console.warn('Filesystem write failed (likely serverless environment), returning data URL:', err.message);
+    console.warn('Upload error, returning original image data URL:', err.message);
     return res.json({
       success: true,
       url: req.body.image,

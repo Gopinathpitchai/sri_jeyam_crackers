@@ -181,8 +181,8 @@ export default function CheckoutModal({ isOpen, onClose, onViewBill }) {
               <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-xs text-slate-700 space-y-1 text-xs">
                 <div className="font-bold text-amber-800">📱 GPay / PhonePe / Paytm</div>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] pt-0.5">
-                  <div>Number: <strong className="text-slate-900 font-mono font-bold">8939910664</strong></div>
-                  <div>UPI ID: <strong className="text-slate-900 font-mono font-bold">8939910664@icici</strong></div>
+                  <div>UPI Number: <strong className="text-slate-900 font-mono font-bold">63801 15587</strong></div>
+                  <div>UPI ID: <strong className="text-slate-900 font-mono font-bold">6380115587@upi</strong></div>
                 </div>
               </div>
               <p className="text-[10px] text-slate-500 italic text-center pt-1">

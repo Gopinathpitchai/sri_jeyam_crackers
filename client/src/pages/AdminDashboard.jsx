@@ -843,9 +843,9 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                 <div className="bg-midnight-950 p-4 rounded-xl border border-slate-800 space-y-2">
                   <div className="text-emerald-400 font-bold text-sm">📱 GPay / PhonePe / Paytm</div>
                   <div className="space-y-1 text-slate-300">
-                    <div>Mobile Number: <strong className="text-white font-mono">8939910664</strong></div>
-                    <div>UPI Name: <strong className="text-white">Rajesh Kannan</strong></div>
-                    <div>UPI ID: <strong className="text-white font-mono">8939910664@icici</strong></div>
+                    <div>UPI / Mobile Number: <strong className="text-white font-mono">63801 15587</strong></div>
+                    <div>UPI Name: <strong className="text-white">Sri Jeyam Crackers</strong></div>
+                    <div>UPI ID: <strong className="text-white font-mono">6380115587@upi</strong></div>
                   </div>
                 </div>
               </div>

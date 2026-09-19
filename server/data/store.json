@@ -377,7 +377,7 @@
       "discount_percent": 50,
       "offer_price": 128,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
-      "image_url": "",
+      "image_url": "https://quigqqhspdlqgojtqyuc.supabase.co/storage/v1/object/public/product-images/15cm_multimix_sparklers_1789830745485.jpg",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
       "updated_at": "2026-09-19T10:37:10.343Z"
@@ -3217,7 +3217,8 @@
     "updated_at": "2026-09-19T10:36:03.552Z"
   },
   "payment_details": {
-    "gpay_phonepe": "8939910664",
-    "upi_id": "8939910664@icici"
+    "gpay_phonepe": "6380115587",
+    "upi_number": "6380115587",
+    "upi_id": "6380115587@upi"
   }
 }
