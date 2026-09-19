@@ -23,7 +23,13 @@ export const api = {
         url += `&name=ilike.*${encodeURIComponent(params.search)}*`;
       }
 
-      const res = await fetch(url, { headers: supabaseHeaders });
+      const res = await fetch(url, { 
+        headers: {
+          ...supabaseHeaders,
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        } 
+      });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) return data;
@@ -34,7 +40,12 @@ export const api = {
 
     try {
       const query = new URLSearchParams(params).toString();
-      const res = await fetch(`${API_BASE}/products${query ? '?' + query : ''}`);
+      const res = await fetch(`${API_BASE}/products${query ? '?' + query : ''}`, {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        }
+      });
       if (res.ok) return await res.json();
     } catch (e) {
       console.warn('API fallback also failed:', e);
@@ -135,7 +146,11 @@ export const api = {
   getSettings: async () => {
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/site_settings?select=*&limit=1`, {
-        headers: supabaseHeaders
+        headers: {
+          ...supabaseHeaders,
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        }
       });
       if (res.ok) {
         const data = await res.json();
@@ -146,7 +161,12 @@ export const api = {
     }
 
     try {
-      const res = await fetch(`${API_BASE}/settings`);
+      const res = await fetch(`${API_BASE}/settings`, {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        }
+      });
       if (res.ok) return await res.json();
     } catch (e) {}
 

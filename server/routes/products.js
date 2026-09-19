@@ -265,8 +265,9 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
 
   try {
     let updatedCount = 0;
+    let pgSuccess = false;
 
-    // 1. Instant PostgreSQL Pool Query if available (executes in <50ms)
+    // 1. Instant PostgreSQL Pool Query if available (executes in <100ms)
     try {
       const sql = `
         UPDATE products 
@@ -277,23 +278,72 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
         RETURNING id;
       `;
       const pgRes = await queryDatabase(sql, [disc, catParam]);
-      if (pgRes && pgRes.rowCount !== undefined) {
+      if (pgRes && pgRes.rowCount !== undefined && pgRes.rowCount > 0) {
         updatedCount = pgRes.rowCount;
+        pgSuccess = true;
+        console.log(`[Batch Discount] Direct PG updated ${updatedCount} products to ${disc}%`);
       }
     } catch (pgErr) {
-      console.warn('Direct PG batch discount update failed, trying Supabase fallback:', pgErr.message);
+      console.warn('[Batch Discount] Direct PG update failed, using Supabase REST upsert:', pgErr.message);
     }
 
-    // 2. Synchronize local store
+    // 2. If Direct PG did not update rows, update Supabase via REST API
+    const hasSupabase = await useSupabaseProducts();
+    if (hasSupabase && !pgSuccess) {
+      try {
+        let query = supabase.from('products').select('*');
+        if (!isAll) {
+          query = query.ilike('category', catParam);
+        }
+        const { data: dbProducts, error: fetchErr } = await query;
+        if (!fetchErr && Array.isArray(dbProducts) && dbProducts.length > 0) {
+          const updatedPayload = dbProducts.map(p => {
+            const orig = parseFloat(p.original_price || 0);
+            return {
+              ...p,
+              discount_percent: disc,
+              offer_price: Math.round(orig * (1 - disc / 100)),
+              updated_at: new Date().toISOString()
+            };
+          });
+
+          // Upsert in batches of 50
+          for (let i = 0; i < updatedPayload.length; i += 50) {
+            const chunk = updatedPayload.slice(i, i + 50);
+            const { error: upErr } = await supabase.from('products').upsert(chunk);
+            if (upErr) {
+              console.warn('[Batch Discount] Chunk upsert warning:', upErr.message);
+            }
+          }
+          updatedCount = updatedPayload.length;
+          console.log(`[Batch Discount] Supabase REST upserted ${updatedCount} products to ${disc}%`);
+        }
+      } catch (sbErr) {
+        console.warn('[Batch Discount] Supabase REST upsert failed:', sbErr.message);
+      }
+    }
+
+    // 3. If updating all products, also update site_settings discount_percent in Supabase
+    if (isAll && hasSupabase) {
+      try {
+        await supabase
+          .from('site_settings')
+          .update({ discount_percent: disc, updated_at: new Date().toISOString() })
+          .eq('id', 'default');
+      } catch (sErr) {
+        console.warn('Could not update site_settings discount in Supabase:', sErr.message);
+      }
+    }
+
+    // 4. Synchronize local store
     const store = loadLocalStore();
     store.products = (store.products || []).map(p => {
       if (isAll || (p.category && p.category.toLowerCase() === catParam.toLowerCase())) {
         const orig = parseFloat(p.original_price || 0);
-        const newOffer = Math.round(orig * (1 - disc / 100));
         return {
           ...p,
           discount_percent: disc,
-          offer_price: newOffer,
+          offer_price: Math.round(orig * (1 - disc / 100)),
           updated_at: new Date().toISOString()
         };
       }
@@ -308,32 +358,6 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
 
     if (updatedCount === 0) {
       updatedCount = isAll ? store.products.length : store.products.filter(p => p.category && p.category.toLowerCase() === catParam.toLowerCase()).length;
-    }
-
-    // 3. If PG wasn't used or fallback needed, update Supabase in parallel batches
-    const hasSupabase = await useSupabaseProducts();
-    if (hasSupabase && updatedCount === 0) {
-      const matching = store.products.filter(p => isAll || (p.category && p.category.toLowerCase() === catParam.toLowerCase()));
-      // Update in chunks of 25 in parallel
-      for (let i = 0; i < matching.length; i += 25) {
-        const chunk = matching.slice(i, i + 25);
-        await Promise.all(chunk.map(p => 
-          supabase.from('products').update({
-            discount_percent: p.discount_percent,
-            offer_price: p.offer_price,
-            updated_at: new Date().toISOString()
-          }).eq('id', p.id)
-        ));
-      }
-    }
-
-    // Also update site_settings discount_percent in Supabase if category is all
-    if (isAll && hasSupabase) {
-      try {
-        await supabase.from('site_settings').update({ discount_percent: disc }).eq('id', 'default');
-      } catch (sErr) {
-        console.warn('Could not update site_settings discount in Supabase:', sErr.message);
-      }
     }
 
     return res.json({ success: true, updatedCount, discount_percent: disc });
