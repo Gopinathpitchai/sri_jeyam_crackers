@@ -73,6 +73,14 @@ function getInitialStore() {
   };
 }
 
+// Statically require store.json so Vercel's bundler bundles it into the serverless deployment
+let staticStore = null;
+try {
+  staticStore = require('../data/store.json');
+} catch (e) {
+  staticStore = null;
+}
+
 function loadLocalStore() {
   try {
     if (fs.existsSync(DATA_FILE)) {
@@ -81,6 +89,9 @@ function loadLocalStore() {
     }
   } catch (err) {
     console.warn('Could not read local store file, using in-memory store:', err.message);
+  }
+  if (staticStore) {
+    return JSON.parse(JSON.stringify(staticStore));
   }
   return getInitialStore();
 }

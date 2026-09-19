@@ -4,11 +4,22 @@ const fs = require('fs');
 const path = require('path');
 const { requireAdmin } = require('../middleware/auth');
 
-// Upload directory: client/public/images/uploads
-const uploadDir = path.join(__dirname, '../../client/public/images/uploads');
+// Upload directory: client/public/images/uploads (with safe serverless fallback)
+const isVercel = !!process.env.VERCEL;
+const uploadDir = isVercel
+  ? path.join('/tmp', 'uploads')
+  : path.join(__dirname, '../../client/public/images/uploads');
 
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+function ensureUploadDir() {
+  try {
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    return true;
+  } catch (err) {
+    console.warn('[Upload] Read-only filesystem, skipping local mkdir:', err.message);
+    return false;
+  }
 }
 
 // POST /api/upload (Admin only)
@@ -38,8 +49,9 @@ router.post('/', requireAdmin, (req, res) => {
       .replace(/[^a-zA-Z0-9_-]/g, '_')
       .substring(0, 30);
     const newFilename = `${cleanBaseName}_${Date.now()}.${ext}`;
+    
+    ensureUploadDir();
     const filePath = path.join(uploadDir, newFilename);
-
     fs.writeFileSync(filePath, buffer);
 
     const relativeUrl = `/images/uploads/${newFilename}`;

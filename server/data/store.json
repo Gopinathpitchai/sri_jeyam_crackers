@@ -122,13 +122,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 80,
-      "discount_percent": 80,
-      "offer_price": 16,
+      "discount_percent": 90,
+      "offer_price": 8,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "/images/uploads/_______________jpg_1789742294010.jpg",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.060Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-2",
@@ -136,13 +136,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 52,
-      "discount_percent": 80,
-      "offer_price": 10,
+      "discount_percent": 90,
+      "offer_price": 5,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "/images/uploads/_______________jpg_1789742373123.jpg",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-3",
@@ -150,13 +150,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 60,
-      "discount_percent": 80,
-      "offer_price": 12,
+      "discount_percent": 90,
+      "offer_price": 6,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "/images/uploads/_______________jpg_1789743283824.jpg",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-4",
@@ -164,13 +164,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 72,
-      "discount_percent": 80,
-      "offer_price": 14,
+      "discount_percent": 90,
+      "offer_price": 7,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-5",
@@ -178,13 +178,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 72,
-      "discount_percent": 80,
-      "offer_price": 14,
+      "discount_percent": 90,
+      "offer_price": 7,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-6",
@@ -192,13 +192,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 88,
-      "discount_percent": 80,
-      "offer_price": 18,
+      "discount_percent": 90,
+      "offer_price": 9,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-7",
@@ -206,13 +206,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 100,
-      "discount_percent": 80,
-      "offer_price": 20,
+      "discount_percent": 90,
+      "offer_price": 10,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-8",
@@ -220,13 +220,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 116,
-      "discount_percent": 80,
-      "offer_price": 23,
+      "discount_percent": 90,
+      "offer_price": 12,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-9",
@@ -234,13 +234,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 172,
-      "discount_percent": 80,
-      "offer_price": 34,
+      "discount_percent": 90,
+      "offer_price": 17,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-10",
@@ -248,13 +248,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 192,
-      "discount_percent": 80,
-      "offer_price": 38,
+      "discount_percent": 90,
+      "offer_price": 19,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-11",
@@ -262,13 +262,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 220,
-      "discount_percent": 80,
-      "offer_price": 44,
+      "discount_percent": 90,
+      "offer_price": 22,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-12",
@@ -276,13 +276,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 256,
-      "discount_percent": 80,
-      "offer_price": 51,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-13",
@@ -290,13 +290,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 256,
-      "discount_percent": 80,
-      "offer_price": 51,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-14",
@@ -304,13 +304,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 248,
-      "discount_percent": 80,
-      "offer_price": 50,
+      "discount_percent": 90,
+      "offer_price": 25,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-15",
@@ -318,13 +318,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 172,
-      "discount_percent": 80,
-      "offer_price": 34,
+      "discount_percent": 90,
+      "offer_price": 17,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-16",
@@ -332,13 +332,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 192,
-      "discount_percent": 80,
-      "offer_price": 38,
+      "discount_percent": 90,
+      "offer_price": 19,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-17",
@@ -346,13 +346,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 220,
-      "discount_percent": 80,
-      "offer_price": 44,
+      "discount_percent": 90,
+      "offer_price": 22,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-18",
@@ -360,13 +360,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 248,
-      "discount_percent": 80,
-      "offer_price": 50,
+      "discount_percent": 90,
+      "offer_price": 25,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-19",
@@ -374,13 +374,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 256,
-      "discount_percent": 80,
-      "offer_price": 51,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-20",
@@ -388,13 +388,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 256,
-      "discount_percent": 80,
-      "offer_price": 51,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.647Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-21",
@@ -402,13 +402,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 704,
-      "discount_percent": 80,
-      "offer_price": 141,
+      "discount_percent": 90,
+      "offer_price": 70,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-22",
@@ -416,13 +416,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 816,
-      "discount_percent": 80,
-      "offer_price": 163,
+      "discount_percent": 90,
+      "offer_price": 82,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-23",
@@ -430,13 +430,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 924,
-      "discount_percent": 80,
-      "offer_price": 185,
+      "discount_percent": 90,
+      "offer_price": 92,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-24",
@@ -444,13 +444,13 @@
       "category": "Sparklers",
       "pack_size": "Box",
       "original_price": 840,
-      "discount_percent": 80,
-      "offer_price": 168,
+      "discount_percent": 90,
+      "offer_price": 84,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-26",
@@ -458,13 +458,13 @@
       "category": "Flower Pots",
       "pack_size": "Box (10 Pcs)",
       "original_price": 320,
-      "discount_percent": 80,
-      "offer_price": 64,
+      "discount_percent": 90,
+      "offer_price": 32,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-27",
@@ -472,13 +472,13 @@
       "category": "Flower Pots",
       "pack_size": "Box (10 Pcs)",
       "original_price": 396,
-      "discount_percent": 80,
-      "offer_price": 79,
+      "discount_percent": 90,
+      "offer_price": 40,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-30",
@@ -486,13 +486,13 @@
       "category": "Flower Pots",
       "pack_size": "Box (10 Pcs)",
       "original_price": 892,
-      "discount_percent": 80,
-      "offer_price": 178,
+      "discount_percent": 90,
+      "offer_price": 89,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-31",
@@ -500,13 +500,13 @@
       "category": "Flower Pots",
       "pack_size": "Box (5 Pcs)",
       "original_price": 752,
-      "discount_percent": 80,
-      "offer_price": 150,
+      "discount_percent": 90,
+      "offer_price": 75,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-32",
@@ -514,13 +514,13 @@
       "category": "Flower Pots",
       "pack_size": "Box",
       "original_price": 1180,
-      "discount_percent": 80,
-      "offer_price": 236,
+      "discount_percent": 90,
+      "offer_price": 118,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-33",
@@ -528,13 +528,13 @@
       "category": "Chakkars",
       "pack_size": "Box (10 Pcs)",
       "original_price": 160,
-      "discount_percent": 80,
-      "offer_price": 32,
+      "discount_percent": 90,
+      "offer_price": 16,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-34",
@@ -542,13 +542,13 @@
       "category": "Chakkars",
       "pack_size": "Box (10 Pcs)",
       "original_price": 456,
-      "discount_percent": 80,
-      "offer_price": 91,
+      "discount_percent": 90,
+      "offer_price": 46,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-35",
@@ -556,13 +556,13 @@
       "category": "Chakkars",
       "pack_size": "Box (10 Pcs)",
       "original_price": 336,
-      "discount_percent": 80,
-      "offer_price": 67,
+      "discount_percent": 90,
+      "offer_price": 34,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-36",
@@ -570,13 +570,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-37",
@@ -584,13 +584,13 @@
       "category": "Chakkars",
       "pack_size": "Box (10 Pcs)",
       "original_price": 792,
-      "discount_percent": 80,
-      "offer_price": 158,
+      "discount_percent": 90,
+      "offer_price": 79,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-38",
@@ -598,13 +598,13 @@
       "category": "Chakkars",
       "pack_size": "Box (5 Pcs)",
       "original_price": 248,
-      "discount_percent": 80,
-      "offer_price": 50,
+      "discount_percent": 90,
+      "offer_price": 25,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-39",
@@ -612,13 +612,13 @@
       "category": "Chakkars",
       "pack_size": "Box (5 Pcs)",
       "original_price": 740,
-      "discount_percent": 80,
-      "offer_price": 148,
+      "discount_percent": 90,
+      "offer_price": 74,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-40",
@@ -626,13 +626,13 @@
       "category": "Chakkars",
       "pack_size": "Box (5 Pcs)",
       "original_price": 480,
-      "discount_percent": 80,
-      "offer_price": 96,
+      "discount_percent": 90,
+      "offer_price": 48,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-41",
@@ -640,13 +640,13 @@
       "category": "Chakkars",
       "pack_size": "Box (5 Pcs)",
       "original_price": 940,
-      "discount_percent": 80,
-      "offer_price": 188,
+      "discount_percent": 90,
+      "offer_price": 94,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-42",
@@ -654,13 +654,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 860,
-      "discount_percent": 80,
-      "offer_price": 172,
+      "discount_percent": 90,
+      "offer_price": 86,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-43",
@@ -668,13 +668,13 @@
       "category": "Chakkars",
       "pack_size": "Box (3 Pcs)",
       "original_price": 1140,
-      "discount_percent": 80,
-      "offer_price": 228,
+      "discount_percent": 90,
+      "offer_price": 114,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-45",
@@ -682,13 +682,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 972,
-      "discount_percent": 80,
-      "offer_price": 194,
+      "discount_percent": 90,
+      "offer_price": 97,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-46",
@@ -696,13 +696,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 512,
-      "discount_percent": 80,
-      "offer_price": 102,
+      "discount_percent": 90,
+      "offer_price": 51,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-47",
@@ -710,13 +710,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 880,
-      "discount_percent": 80,
-      "offer_price": 176,
+      "discount_percent": 90,
+      "offer_price": 88,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-48",
@@ -724,13 +724,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 648,
-      "discount_percent": 80,
-      "offer_price": 130,
+      "discount_percent": 90,
+      "offer_price": 65,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-49",
@@ -738,13 +738,13 @@
       "category": "Chakkars",
       "pack_size": "Box",
       "original_price": 584,
-      "discount_percent": 80,
-      "offer_price": 117,
+      "discount_percent": 90,
+      "offer_price": 58,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-50",
@@ -752,13 +752,13 @@
       "category": "Twinkling Star",
       "pack_size": "Box (10 Pcs)",
       "original_price": 116,
-      "discount_percent": 80,
-      "offer_price": 23,
+      "discount_percent": 90,
+      "offer_price": 12,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-51",
@@ -766,13 +766,13 @@
       "category": "Twinkling Star",
       "pack_size": "Box (10 Pcs)",
       "original_price": 236,
-      "discount_percent": 80,
-      "offer_price": 47,
+      "discount_percent": 90,
+      "offer_price": 24,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-52",
@@ -780,13 +780,13 @@
       "category": "Toys",
       "pack_size": "Box",
       "original_price": 96,
-      "discount_percent": 80,
-      "offer_price": 19,
+      "discount_percent": 90,
+      "offer_price": 10,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-53",
@@ -794,13 +794,13 @@
       "category": "Toys",
       "pack_size": "Box",
       "original_price": 108,
-      "discount_percent": 80,
-      "offer_price": 22,
+      "discount_percent": 90,
+      "offer_price": 11,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-54",
@@ -808,13 +808,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 820,
-      "discount_percent": 80,
-      "offer_price": 164,
+      "discount_percent": 90,
+      "offer_price": 82,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-55",
@@ -822,13 +822,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 140,
-      "discount_percent": 80,
-      "offer_price": 28,
+      "discount_percent": 90,
+      "offer_price": 14,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-56",
@@ -836,13 +836,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 388,
-      "discount_percent": 80,
-      "offer_price": 78,
+      "discount_percent": 90,
+      "offer_price": 39,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-57",
@@ -850,13 +850,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 490,
-      "discount_percent": 80,
-      "offer_price": 98,
+      "discount_percent": 90,
+      "offer_price": 49,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-58",
@@ -864,13 +864,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 1120,
-      "discount_percent": 80,
-      "offer_price": 224,
+      "discount_percent": 90,
+      "offer_price": 112,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-59",
@@ -878,13 +878,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 416,
-      "discount_percent": 80,
-      "offer_price": 83,
+      "discount_percent": 90,
+      "offer_price": 42,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-60",
@@ -892,13 +892,13 @@
       "category": "Bombs",
       "pack_size": "Box (10 Pcs)",
       "original_price": 840,
-      "discount_percent": 80,
-      "offer_price": 168,
+      "discount_percent": 90,
+      "offer_price": 84,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-61",
@@ -906,13 +906,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 24,
-      "discount_percent": 80,
-      "offer_price": 5,
+      "discount_percent": 90,
+      "offer_price": 2,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-62",
@@ -920,13 +920,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 40,
-      "discount_percent": 80,
-      "offer_price": 8,
+      "discount_percent": 90,
+      "offer_price": 4,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-63",
@@ -934,13 +934,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 72,
-      "discount_percent": 80,
-      "offer_price": 14,
+      "discount_percent": 90,
+      "offer_price": 7,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-64",
@@ -948,13 +948,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 100,
-      "discount_percent": 80,
-      "offer_price": 20,
+      "discount_percent": 90,
+      "offer_price": 10,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-65",
@@ -962,13 +962,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 220,
-      "discount_percent": 80,
-      "offer_price": 44,
+      "discount_percent": 90,
+      "offer_price": 22,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-66",
@@ -976,13 +976,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 280,
-      "discount_percent": 80,
-      "offer_price": 56,
+      "discount_percent": 90,
+      "offer_price": 28,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-67",
@@ -990,13 +990,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 304,
-      "discount_percent": 80,
-      "offer_price": 61,
+      "discount_percent": 90,
+      "offer_price": 30,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-68",
@@ -1004,13 +1004,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 304,
-      "discount_percent": 80,
-      "offer_price": 61,
+      "discount_percent": 90,
+      "offer_price": 30,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-69",
@@ -1018,13 +1018,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 152,
-      "discount_percent": 80,
-      "offer_price": 30,
+      "discount_percent": 90,
+      "offer_price": 15,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-70",
@@ -1032,13 +1032,13 @@
       "category": "One Sound Crackers",
       "pack_size": "Pkt (5 Pcs)",
       "original_price": 132,
-      "discount_percent": 80,
-      "offer_price": 26,
+      "discount_percent": 90,
+      "offer_price": 13,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-71",
@@ -1046,13 +1046,13 @@
       "category": "Sound Party",
       "pack_size": "Pcs",
       "original_price": 184,
-      "discount_percent": 80,
-      "offer_price": 37,
+      "discount_percent": 90,
+      "offer_price": 18,
       "description": "Genuine Sivakasi fireworks item. Packing: Pcs. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-72",
@@ -1060,13 +1060,13 @@
       "category": "Sound Party",
       "pack_size": "Pcs",
       "original_price": 368,
-      "discount_percent": 80,
-      "offer_price": 74,
+      "discount_percent": 90,
+      "offer_price": 37,
       "description": "Genuine Sivakasi fireworks item. Packing: Pcs. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-73",
@@ -1074,13 +1074,13 @@
       "category": "Sound Party",
       "pack_size": "Pcs",
       "original_price": 736,
-      "discount_percent": 80,
-      "offer_price": 147,
+      "discount_percent": 90,
+      "offer_price": 74,
       "description": "Genuine Sivakasi fireworks item. Packing: Pcs. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.076Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-74",
@@ -1088,13 +1088,13 @@
       "category": "Sound Party",
       "pack_size": "Box (10 Pcs)",
       "original_price": 1040,
-      "discount_percent": 80,
-      "offer_price": 208,
+      "discount_percent": 90,
+      "offer_price": 104,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-75",
@@ -1102,13 +1102,13 @@
       "category": "Sound Party",
       "pack_size": "Pcs",
       "original_price": 240,
-      "discount_percent": 80,
-      "offer_price": 48,
+      "discount_percent": 90,
+      "offer_price": 24,
       "description": "Genuine Sivakasi fireworks item. Packing: Pcs. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-76",
@@ -1116,13 +1116,13 @@
       "category": "Sound Party",
       "pack_size": "Box (10 Pcs)",
       "original_price": 1500,
-      "discount_percent": 80,
-      "offer_price": 300,
+      "discount_percent": 90,
+      "offer_price": 150,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-77",
@@ -1130,13 +1130,13 @@
       "category": "Bijili",
       "pack_size": "Pkt (50 Pcs)",
       "original_price": 68,
-      "discount_percent": 80,
-      "offer_price": 14,
+      "discount_percent": 90,
+      "offer_price": 7,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (50 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.131Z"
     },
     {
       "id": "prod-78",
@@ -1144,13 +1144,13 @@
       "category": "Bijili",
       "pack_size": "Pkt (100 Pcs)",
       "original_price": 156,
-      "discount_percent": 80,
-      "offer_price": 31,
+      "discount_percent": 90,
+      "offer_price": 16,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (100 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-79",
@@ -1158,13 +1158,13 @@
       "category": "Bijili",
       "pack_size": "Pkt (50 Pcs)",
       "original_price": 76,
-      "discount_percent": 80,
-      "offer_price": 15,
+      "discount_percent": 90,
+      "offer_price": 8,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (50 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-80",
@@ -1172,13 +1172,13 @@
       "category": "Bijili",
       "pack_size": "Pkt (100 Pcs)",
       "original_price": 196,
-      "discount_percent": 80,
-      "offer_price": 39,
+      "discount_percent": 90,
+      "offer_price": 20,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt (100 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-81",
@@ -1186,13 +1186,13 @@
       "category": "Rockets",
       "pack_size": "Box (10 Pcs)",
       "original_price": 136,
-      "discount_percent": 80,
-      "offer_price": 27,
+      "discount_percent": 90,
+      "offer_price": 14,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-82",
@@ -1200,13 +1200,13 @@
       "category": "Rockets",
       "pack_size": "Box (10 Pcs)",
       "original_price": 260,
-      "discount_percent": 80,
-      "offer_price": 52,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-83",
@@ -1214,13 +1214,13 @@
       "category": "Rockets",
       "pack_size": "Box (10 Pcs)",
       "original_price": 504,
-      "discount_percent": 80,
-      "offer_price": 101,
+      "discount_percent": 90,
+      "offer_price": 50,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-84",
@@ -1228,13 +1228,13 @@
       "category": "Rockets",
       "pack_size": "Box (10 Pcs)",
       "original_price": 536,
-      "discount_percent": 80,
-      "offer_price": 107,
+      "discount_percent": 90,
+      "offer_price": 54,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-85",
@@ -1242,13 +1242,13 @@
       "category": "Wala",
       "pack_size": "Pkt",
       "original_price": 60,
-      "discount_percent": 80,
-      "offer_price": 12,
+      "discount_percent": 90,
+      "offer_price": 6,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-86",
@@ -1256,13 +1256,13 @@
       "category": "Wala",
       "pack_size": "Pkt",
       "original_price": 152,
-      "discount_percent": 80,
-      "offer_price": 30,
+      "discount_percent": 90,
+      "offer_price": 15,
       "description": "Genuine Sivakasi fireworks item. Packing: Pkt. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-87",
@@ -1270,13 +1270,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 720,
-      "discount_percent": 80,
-      "offer_price": 144,
+      "discount_percent": 90,
+      "offer_price": 72,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-88",
@@ -1284,13 +1284,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-89",
@@ -1298,13 +1298,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 460,
-      "discount_percent": 80,
-      "offer_price": 92,
+      "discount_percent": 90,
+      "offer_price": 46,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-90",
@@ -1312,13 +1312,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 640,
-      "discount_percent": 80,
-      "offer_price": 128,
+      "discount_percent": 90,
+      "offer_price": 64,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-91",
@@ -1326,13 +1326,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 1480,
-      "discount_percent": 80,
-      "offer_price": 296,
+      "discount_percent": 90,
+      "offer_price": 148,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-92",
@@ -1340,13 +1340,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 1280,
-      "discount_percent": 80,
-      "offer_price": 256,
+      "discount_percent": 90,
+      "offer_price": 128,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-93",
@@ -1354,13 +1354,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 2960,
-      "discount_percent": 80,
-      "offer_price": 592,
+      "discount_percent": 90,
+      "offer_price": 296,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-94",
@@ -1368,13 +1368,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 3400,
-      "discount_percent": 80,
-      "offer_price": 680,
+      "discount_percent": 90,
+      "offer_price": 340,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-95",
@@ -1382,13 +1382,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 7600,
-      "discount_percent": 80,
-      "offer_price": 1520,
+      "discount_percent": 90,
+      "offer_price": 760,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-96",
@@ -1396,13 +1396,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 6800,
-      "discount_percent": 80,
-      "offer_price": 1360,
+      "discount_percent": 90,
+      "offer_price": 680,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-97",
@@ -1410,13 +1410,13 @@
       "category": "Wala",
       "pack_size": "Box",
       "original_price": 15200,
-      "discount_percent": 80,
-      "offer_price": 3040,
+      "discount_percent": 90,
+      "offer_price": 1520,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-98",
@@ -1424,13 +1424,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 560,
-      "discount_percent": 80,
-      "offer_price": 112,
+      "discount_percent": 90,
+      "offer_price": 56,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-99",
@@ -1438,13 +1438,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 648,
-      "discount_percent": 80,
-      "offer_price": 130,
+      "discount_percent": 90,
+      "offer_price": 65,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-100",
@@ -1452,13 +1452,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 960,
-      "discount_percent": 80,
-      "offer_price": 192,
+      "discount_percent": 90,
+      "offer_price": 96,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-101",
@@ -1466,13 +1466,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 920,
-      "discount_percent": 80,
-      "offer_price": 184,
+      "discount_percent": 90,
+      "offer_price": 92,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-102",
@@ -1480,13 +1480,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 765,
-      "discount_percent": 80,
-      "offer_price": 153,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-103",
@@ -1494,13 +1494,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 720,
-      "discount_percent": 80,
-      "offer_price": 144,
+      "discount_percent": 90,
+      "offer_price": 72,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-104",
@@ -1508,13 +1508,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (3 Pcs)",
       "original_price": 196,
-      "discount_percent": 80,
-      "offer_price": 39,
+      "discount_percent": 90,
+      "offer_price": 20,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-105",
@@ -1522,13 +1522,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 120,
-      "discount_percent": 80,
-      "offer_price": 24,
+      "discount_percent": 90,
+      "offer_price": 12,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-106",
@@ -1536,13 +1536,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (5 Pcs)",
       "original_price": 316,
-      "discount_percent": 80,
-      "offer_price": 63,
+      "discount_percent": 90,
+      "offer_price": 32,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-107",
@@ -1550,13 +1550,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 380,
-      "discount_percent": 80,
-      "offer_price": 76,
+      "discount_percent": 90,
+      "offer_price": 38,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-108",
@@ -1564,13 +1564,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (10 Pcs)",
       "original_price": 472,
-      "discount_percent": 80,
-      "offer_price": 94,
+      "discount_percent": 90,
+      "offer_price": 47,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-109",
@@ -1578,13 +1578,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (5 Pcs)",
       "original_price": 220,
-      "discount_percent": 80,
-      "offer_price": 44,
+      "discount_percent": 90,
+      "offer_price": 22,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-110",
@@ -1592,13 +1592,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 460,
-      "discount_percent": 80,
-      "offer_price": 92,
+      "discount_percent": 90,
+      "offer_price": 46,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-111",
@@ -1606,13 +1606,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (10 Pcs)",
       "original_price": 32,
-      "discount_percent": 80,
-      "offer_price": 6,
+      "discount_percent": 90,
+      "offer_price": 3,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-112",
@@ -1620,13 +1620,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (10 Pcs)",
       "original_price": 40,
-      "discount_percent": 80,
-      "offer_price": 8,
+      "discount_percent": 90,
+      "offer_price": 4,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (10 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-113",
@@ -1634,13 +1634,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 648,
-      "discount_percent": 80,
-      "offer_price": 130,
+      "discount_percent": 90,
+      "offer_price": 65,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-114",
@@ -1648,13 +1648,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 680,
-      "discount_percent": 80,
-      "offer_price": 136,
+      "discount_percent": 90,
+      "offer_price": 68,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-115",
@@ -1662,13 +1662,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 832,
-      "discount_percent": 80,
-      "offer_price": 166,
+      "discount_percent": 90,
+      "offer_price": 83,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-116",
@@ -1676,13 +1676,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 832,
-      "discount_percent": 80,
-      "offer_price": 166,
+      "discount_percent": 90,
+      "offer_price": 83,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-117",
@@ -1690,13 +1690,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (1 Pc)",
       "original_price": 840,
-      "discount_percent": 80,
-      "offer_price": 168,
+      "discount_percent": 90,
+      "offer_price": 84,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-118",
@@ -1704,13 +1704,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (1 Pc)",
       "original_price": 560,
-      "discount_percent": 80,
-      "offer_price": 112,
+      "discount_percent": 90,
+      "offer_price": 56,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-119",
@@ -1718,13 +1718,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (5 Pcs)",
       "original_price": 680,
-      "discount_percent": 80,
-      "offer_price": 136,
+      "discount_percent": 90,
+      "offer_price": 68,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-120",
@@ -1732,13 +1732,13 @@
       "category": "Kids Magic",
       "pack_size": "Box",
       "original_price": 384,
-      "discount_percent": 80,
-      "offer_price": 77,
+      "discount_percent": 90,
+      "offer_price": 38,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-121",
@@ -1746,13 +1746,13 @@
       "category": "Kids Magic",
       "pack_size": "Box (1 Pc)",
       "original_price": 700,
-      "discount_percent": 80,
-      "offer_price": 140,
+      "discount_percent": 90,
+      "offer_price": 70,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-125",
@@ -1760,13 +1760,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 696,
-      "discount_percent": 80,
-      "offer_price": 139,
+      "discount_percent": 90,
+      "offer_price": 70,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-126",
@@ -1774,13 +1774,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 696,
-      "discount_percent": 80,
-      "offer_price": 139,
+      "discount_percent": 90,
+      "offer_price": 70,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-127",
@@ -1788,13 +1788,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-128",
@@ -1802,13 +1802,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 320,
-      "discount_percent": 80,
-      "offer_price": 64,
+      "discount_percent": 90,
+      "offer_price": 32,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-129",
@@ -1816,13 +1816,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 888,
-      "discount_percent": 80,
-      "offer_price": 178,
+      "discount_percent": 90,
+      "offer_price": 89,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-130",
@@ -1830,13 +1830,13 @@
       "category": "New Arrivals",
       "pack_size": "Box (5 Pcs)",
       "original_price": 848,
-      "discount_percent": 80,
-      "offer_price": 170,
+      "discount_percent": 90,
+      "offer_price": 85,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-131",
@@ -1844,13 +1844,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 576,
-      "discount_percent": 80,
-      "offer_price": 115,
+      "discount_percent": 90,
+      "offer_price": 58,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-132",
@@ -1858,13 +1858,13 @@
       "category": "New Arrivals",
       "pack_size": "Box (5 Pcs)",
       "original_price": 512,
-      "discount_percent": 80,
-      "offer_price": 102,
+      "discount_percent": 90,
+      "offer_price": 51,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-134",
@@ -1872,13 +1872,13 @@
       "category": "New Arrivals",
       "pack_size": "Box",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-135",
@@ -1886,13 +1886,13 @@
       "category": "Match Box",
       "pack_size": "Box",
       "original_price": 780,
-      "discount_percent": 80,
-      "offer_price": 156,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-136",
@@ -1900,13 +1900,13 @@
       "category": "Match Box",
       "pack_size": "Box",
       "original_price": 360,
-      "discount_percent": 80,
-      "offer_price": 72,
+      "discount_percent": 90,
+      "offer_price": 36,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-137",
@@ -1914,13 +1914,13 @@
       "category": "Match Box",
       "pack_size": "Box",
       "original_price": 1040,
-      "discount_percent": 80,
-      "offer_price": 208,
+      "discount_percent": 90,
+      "offer_price": 104,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-138",
@@ -1928,13 +1928,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 192,
-      "discount_percent": 80,
-      "offer_price": 38,
+      "discount_percent": 90,
+      "offer_price": 19,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-139",
@@ -1942,13 +1942,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-140",
@@ -1956,13 +1956,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 392,
-      "discount_percent": 80,
-      "offer_price": 78,
+      "discount_percent": 90,
+      "offer_price": 39,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-141",
@@ -1970,13 +1970,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 292,
-      "discount_percent": 80,
-      "offer_price": 58,
+      "discount_percent": 90,
+      "offer_price": 29,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-141.1",
@@ -1984,13 +1984,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box (5 Pcs)",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-142",
@@ -1998,13 +1998,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-143",
@@ -2012,13 +2012,13 @@
       "category": "Mini Sky Flying",
       "pack_size": "Box",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-144",
@@ -2026,13 +2026,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (3 Pcs)",
       "original_price": 1440,
-      "discount_percent": 80,
-      "offer_price": 288,
+      "discount_percent": 90,
+      "offer_price": 144,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-145",
@@ -2040,13 +2040,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (3 Pcs)",
       "original_price": 2600,
-      "discount_percent": 80,
-      "offer_price": 520,
+      "discount_percent": 90,
+      "offer_price": 260,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-146",
@@ -2054,13 +2054,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 560,
-      "discount_percent": 80,
-      "offer_price": 112,
+      "discount_percent": 90,
+      "offer_price": 56,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-147",
@@ -2068,13 +2068,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1360,
-      "discount_percent": 80,
-      "offer_price": 272,
+      "discount_percent": 90,
+      "offer_price": 136,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-149",
@@ -2082,13 +2082,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (3 Pcs)",
       "original_price": 1520,
-      "discount_percent": 80,
-      "offer_price": 304,
+      "discount_percent": 90,
+      "offer_price": 152,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-150",
@@ -2096,13 +2096,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (3 Pcs)",
       "original_price": 2240,
-      "discount_percent": 80,
-      "offer_price": 448,
+      "discount_percent": 90,
+      "offer_price": 224,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-151",
@@ -2110,13 +2110,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1608,
-      "discount_percent": 80,
-      "offer_price": 322,
+      "discount_percent": 90,
+      "offer_price": 161,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-152",
@@ -2124,13 +2124,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (2 Pcs)",
       "original_price": 2376,
-      "discount_percent": 80,
-      "offer_price": 475,
+      "discount_percent": 90,
+      "offer_price": 238,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (2 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-153",
@@ -2138,13 +2138,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (1 Pc)",
       "original_price": 1400,
-      "discount_percent": 80,
-      "offer_price": 280,
+      "discount_percent": 90,
+      "offer_price": 140,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-154",
@@ -2152,13 +2152,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1800,
-      "discount_percent": 80,
-      "offer_price": 360,
+      "discount_percent": 90,
+      "offer_price": 180,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-155",
@@ -2166,13 +2166,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1700,
-      "discount_percent": 80,
-      "offer_price": 340,
+      "discount_percent": 90,
+      "offer_price": 170,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-156",
@@ -2180,13 +2180,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (2 Pcs)",
       "original_price": 2400,
-      "discount_percent": 80,
-      "offer_price": 480,
+      "discount_percent": 90,
+      "offer_price": 240,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (2 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-157",
@@ -2194,13 +2194,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1500,
-      "discount_percent": 80,
-      "offer_price": 300,
+      "discount_percent": 90,
+      "offer_price": 150,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-158",
@@ -2208,13 +2208,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1700,
-      "discount_percent": 80,
-      "offer_price": 340,
+      "discount_percent": 90,
+      "offer_price": 170,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-159",
@@ -2222,13 +2222,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box",
       "original_price": 1600,
-      "discount_percent": 80,
-      "offer_price": 320,
+      "discount_percent": 90,
+      "offer_price": 160,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-160",
@@ -2236,13 +2236,13 @@
       "category": "Special Sky Wonders",
       "pack_size": "Box (2 Pcs)",
       "original_price": 4160,
-      "discount_percent": 80,
-      "offer_price": 832,
+      "discount_percent": 90,
+      "offer_price": 416,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (2 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-161",
@@ -2250,13 +2250,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 1100,
-      "discount_percent": 80,
-      "offer_price": 220,
+      "discount_percent": 90,
+      "offer_price": 110,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-162",
@@ -2264,13 +2264,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 720,
-      "discount_percent": 80,
-      "offer_price": 144,
+      "discount_percent": 90,
+      "offer_price": 72,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-163",
@@ -2278,13 +2278,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 1540,
-      "discount_percent": 80,
-      "offer_price": 308,
+      "discount_percent": 90,
+      "offer_price": 154,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-164",
@@ -2292,13 +2292,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 3080,
-      "discount_percent": 80,
-      "offer_price": 616,
+      "discount_percent": 90,
+      "offer_price": 308,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-165",
@@ -2306,13 +2306,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 6160,
-      "discount_percent": 80,
-      "offer_price": 1232,
+      "discount_percent": 90,
+      "offer_price": 616,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-166",
@@ -2320,13 +2320,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 12320,
-      "discount_percent": 80,
-      "offer_price": 2464,
+      "discount_percent": 90,
+      "offer_price": 1232,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-167",
@@ -2334,13 +2334,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 892,
-      "discount_percent": 80,
-      "offer_price": 178,
+      "discount_percent": 90,
+      "offer_price": 89,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-168",
@@ -2348,13 +2348,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 900,
-      "discount_percent": 80,
-      "offer_price": 180,
+      "discount_percent": 90,
+      "offer_price": 90,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-169",
@@ -2362,13 +2362,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 1900,
-      "discount_percent": 80,
-      "offer_price": 380,
+      "discount_percent": 90,
+      "offer_price": 190,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.077Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-170",
@@ -2376,13 +2376,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 3800,
-      "discount_percent": 80,
-      "offer_price": 760,
+      "discount_percent": 90,
+      "offer_price": 380,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-171",
@@ -2390,13 +2390,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 7200,
-      "discount_percent": 80,
-      "offer_price": 1440,
+      "discount_percent": 90,
+      "offer_price": 720,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-172",
@@ -2404,13 +2404,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 18880,
-      "discount_percent": 80,
-      "offer_price": 3776,
+      "discount_percent": 90,
+      "offer_price": 1888,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-173",
@@ -2418,13 +2418,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 2560,
-      "discount_percent": 80,
-      "offer_price": 512,
+      "discount_percent": 90,
+      "offer_price": 256,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-174",
@@ -2432,13 +2432,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 14000,
-      "discount_percent": 80,
-      "offer_price": 2800,
+      "discount_percent": 90,
+      "offer_price": 1400,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-175",
@@ -2446,13 +2446,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 1396,
-      "discount_percent": 80,
-      "offer_price": 279,
+      "discount_percent": 90,
+      "offer_price": 140,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-176",
@@ -2460,13 +2460,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 880,
-      "discount_percent": 80,
-      "offer_price": 176,
+      "discount_percent": 90,
+      "offer_price": 88,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-177",
@@ -2474,13 +2474,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 15000,
-      "discount_percent": 80,
-      "offer_price": 3000,
+      "discount_percent": 90,
+      "offer_price": 1500,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-178",
@@ -2488,13 +2488,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 11900,
-      "discount_percent": 80,
-      "offer_price": 2380,
+      "discount_percent": 90,
+      "offer_price": 1190,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-179",
@@ -2502,13 +2502,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 752,
-      "discount_percent": 80,
-      "offer_price": 150,
+      "discount_percent": 90,
+      "offer_price": 75,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-179.1",
@@ -2516,13 +2516,13 @@
       "category": "Repeating Shots",
       "pack_size": "Box",
       "original_price": 4500,
-      "discount_percent": 80,
-      "offer_price": 900,
+      "discount_percent": 90,
+      "offer_price": 450,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-180",
@@ -2530,13 +2530,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 544,
-      "discount_percent": 80,
-      "offer_price": 109,
+      "discount_percent": 90,
+      "offer_price": 54,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-181",
@@ -2544,13 +2544,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 520,
-      "discount_percent": 80,
-      "offer_price": 104,
+      "discount_percent": 90,
+      "offer_price": 52,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-182",
@@ -2558,13 +2558,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-183",
@@ -2572,13 +2572,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-184",
@@ -2586,13 +2586,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 1100,
-      "discount_percent": 80,
-      "offer_price": 220,
+      "discount_percent": 90,
+      "offer_price": 110,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-185",
@@ -2600,13 +2600,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 1735,
-      "discount_percent": 80,
-      "offer_price": 347,
+      "discount_percent": 90,
+      "offer_price": 173,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-186",
@@ -2614,13 +2614,13 @@
       "category": "Special Fountains",
       "pack_size": "Tin (1 Pc)",
       "original_price": 640,
-      "discount_percent": 80,
-      "offer_price": 128,
+      "discount_percent": 90,
+      "offer_price": 64,
       "description": "Genuine Sivakasi fireworks item. Packing: Tin (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-187",
@@ -2628,13 +2628,13 @@
       "category": "Special Fountains",
       "pack_size": "Tin (1 Pc)",
       "original_price": 640,
-      "discount_percent": 80,
-      "offer_price": 128,
+      "discount_percent": 90,
+      "offer_price": 64,
       "description": "Genuine Sivakasi fireworks item. Packing: Tin (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-188",
@@ -2642,13 +2642,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (3 Pcs)",
       "original_price": 1400,
-      "discount_percent": 80,
-      "offer_price": 280,
+      "discount_percent": 90,
+      "offer_price": 140,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (3 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-189",
@@ -2656,13 +2656,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 780,
-      "discount_percent": 80,
-      "offer_price": 156,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-190",
@@ -2670,13 +2670,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (2 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (2 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-191",
@@ -2684,13 +2684,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 264,
-      "discount_percent": 80,
-      "offer_price": 53,
+      "discount_percent": 90,
+      "offer_price": 26,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-192",
@@ -2698,13 +2698,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (1 Pc)",
       "original_price": 276,
-      "discount_percent": 80,
-      "offer_price": 55,
+      "discount_percent": 90,
+      "offer_price": 28,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-193",
@@ -2712,13 +2712,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (1 Pc)",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-194",
@@ -2726,13 +2726,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (1 Pc)",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-195",
@@ -2740,13 +2740,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (1 Pc)",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-196",
@@ -2754,13 +2754,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (1 Pc)",
       "original_price": 600,
-      "discount_percent": 80,
-      "offer_price": 120,
+      "discount_percent": 90,
+      "offer_price": 60,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (1 Pc). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-197",
@@ -2768,13 +2768,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-198",
@@ -2782,13 +2782,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-199",
@@ -2796,13 +2796,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-200",
@@ -2810,13 +2810,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-201",
@@ -2824,13 +2824,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 784,
-      "discount_percent": 80,
-      "offer_price": 157,
+      "discount_percent": 90,
+      "offer_price": 78,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-202",
@@ -2838,13 +2838,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 856,
-      "discount_percent": 80,
-      "offer_price": 171,
+      "discount_percent": 90,
+      "offer_price": 86,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-203",
@@ -2852,13 +2852,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 816,
-      "discount_percent": 80,
-      "offer_price": 163,
+      "discount_percent": 90,
+      "offer_price": 82,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-204",
@@ -2866,13 +2866,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 840,
-      "discount_percent": 80,
-      "offer_price": 168,
+      "discount_percent": 90,
+      "offer_price": 84,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-205",
@@ -2880,13 +2880,13 @@
       "category": "Special Fountains",
       "pack_size": "Box (5 Pcs)",
       "original_price": 472,
-      "discount_percent": 80,
-      "offer_price": 94,
+      "discount_percent": 90,
+      "offer_price": 47,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (5 Pcs). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-206",
@@ -2894,13 +2894,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 1296,
-      "discount_percent": 80,
-      "offer_price": 259,
+      "discount_percent": 90,
+      "offer_price": 130,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-207",
@@ -2908,13 +2908,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 1760,
-      "discount_percent": 80,
-      "offer_price": 352,
+      "discount_percent": 90,
+      "offer_price": 176,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-208",
@@ -2922,13 +2922,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 880,
-      "discount_percent": 80,
-      "offer_price": 176,
+      "discount_percent": 90,
+      "offer_price": 88,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-209",
@@ -2936,13 +2936,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 880,
-      "discount_percent": 80,
-      "offer_price": 176,
+      "discount_percent": 90,
+      "offer_price": 88,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-210",
@@ -2950,13 +2950,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 880,
-      "discount_percent": 80,
-      "offer_price": 176,
+      "discount_percent": 90,
+      "offer_price": 88,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-211",
@@ -2964,13 +2964,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 456,
-      "discount_percent": 80,
-      "offer_price": 91,
+      "discount_percent": 90,
+      "offer_price": 46,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-212",
@@ -2978,13 +2978,13 @@
       "category": "Special Fountains",
       "pack_size": "Box",
       "original_price": 696,
-      "discount_percent": 80,
-      "offer_price": 139,
+      "discount_percent": 90,
+      "offer_price": 70,
       "description": "Genuine Sivakasi fireworks item. Packing: Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-213",
@@ -2992,13 +2992,13 @@
       "category": "Gift Boxes",
       "pack_size": "Box (25 Items)",
       "original_price": 760,
-      "discount_percent": 80,
-      "offer_price": 152,
+      "discount_percent": 90,
+      "offer_price": 76,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (25 Items). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-214",
@@ -3006,13 +3006,13 @@
       "category": "Gift Boxes",
       "pack_size": "Box (30 Items)",
       "original_price": 900,
-      "discount_percent": 80,
-      "offer_price": 180,
+      "discount_percent": 90,
+      "offer_price": 90,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (30 Items). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-215",
@@ -3020,13 +3020,13 @@
       "category": "Gift Boxes",
       "pack_size": "Box (35 Items)",
       "original_price": 1200,
-      "discount_percent": 80,
-      "offer_price": 240,
+      "discount_percent": 90,
+      "offer_price": 120,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (35 Items). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-216",
@@ -3034,13 +3034,13 @@
       "category": "Gift Boxes",
       "pack_size": "Box (40 Items)",
       "original_price": 1480,
-      "discount_percent": 80,
-      "offer_price": 296,
+      "discount_percent": 90,
+      "offer_price": 148,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (40 Items). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-217",
@@ -3048,13 +3048,13 @@
       "category": "Gift Boxes",
       "pack_size": "Box (50 Items)",
       "original_price": 1950,
-      "discount_percent": 80,
-      "offer_price": 390,
+      "discount_percent": 90,
+      "offer_price": 195,
       "description": "Genuine Sivakasi fireworks item. Packing: Box (50 Items). Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-1001",
@@ -3062,13 +3062,13 @@
       "category": "Gift Boxes",
       "pack_size": "Combo Box",
       "original_price": 5999,
-      "discount_percent": 80,
-      "offer_price": 1200,
+      "discount_percent": 90,
+      "offer_price": 600,
       "description": "Genuine Sivakasi fireworks item. Packing: Combo Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-1002",
@@ -3076,13 +3076,13 @@
       "category": "Gift Boxes",
       "pack_size": "Combo Box",
       "original_price": 9999,
-      "discount_percent": 80,
-      "offer_price": 2000,
+      "discount_percent": 90,
+      "offer_price": 1000,
       "description": "Genuine Sivakasi fireworks item. Packing: Combo Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-1003",
@@ -3090,13 +3090,13 @@
       "category": "Gift Boxes",
       "pack_size": "Combo Box",
       "original_price": 14999,
-      "discount_percent": 80,
-      "offer_price": 3000,
+      "discount_percent": 90,
+      "offer_price": 1500,
       "description": "Genuine Sivakasi fireworks item. Packing: Combo Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     },
     {
       "id": "prod-1004",
@@ -3104,13 +3104,13 @@
       "category": "Gift Boxes",
       "pack_size": "Mega Box",
       "original_price": 19999,
-      "discount_percent": 80,
-      "offer_price": 4000,
+      "discount_percent": 90,
+      "offer_price": 2000,
       "description": "Genuine Sivakasi fireworks item. Packing: Mega Box. Safe & vibrant celebrations.",
       "image_url": "",
       "in_stock": true,
       "created_at": "2026-09-18T14:02:21.078Z",
-      "updated_at": "2026-09-19T09:44:43.648Z"
+      "updated_at": "2026-09-19T09:52:29.132Z"
     }
   ],
   "orders": [
@@ -3211,7 +3211,7 @@
     "phone2": "9363243938",
     "whatsapp_number": "6380115587",
     "offer_title": "DIWALI SPECIAL OFFER",
-    "discount_percent": 80,
+    "discount_percent": 90,
     "tagline": "Celebrate Diwali with More Crackers & More Savings! HAPPY DIWALI!",
     "min_order_amount": 500
   },

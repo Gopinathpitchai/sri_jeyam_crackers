@@ -74,13 +74,12 @@ export const api = {
       });
       if (res.ok) return await res.json();
     } catch (e) {
-      console.warn('Backend order placement failed, falling back to direct Supabase:', e);
+      console.warn('POST /api/orders failed, trying direct Supabase insert:', e);
     }
 
-    // Direct Supabase insert fallback
+    // 2. Direct Supabase insert fallback
     const payload = {
-      id: `ord-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
-      order_number: `SJC-${Date.now().toString().slice(-6)}`,
+      order_number: orderData.order_number || `SJC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`,
       customer_name: orderData.customer_name,
       phone_number: orderData.phone_number,
       whatsapp_number: orderData.whatsapp_number || orderData.phone_number,

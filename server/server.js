@@ -60,6 +60,8 @@ const healthHandler = (req, res) => {
 };
 app.get('/api/health', healthHandler);
 app.get('/health', healthHandler);
+app.get('/api', healthHandler);
+app.get('/', healthHandler);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
