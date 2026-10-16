@@ -77,7 +77,7 @@ router.post('/', async (req, res) => {
     subtotal: Math.round(subtotal),
     discount: Math.round(discount),
     total_amount: Math.round(total_amount),
-    payment_method: req.body.payment_method || 'Cash / UPI',
+    payment_method: req.body.payment_method || 'Cash / Online',
     status: req.body.status || 'Pending',
     created_at: new Date().toISOString()
   };

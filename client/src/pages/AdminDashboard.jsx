@@ -493,7 +493,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
             }`}
           >
             <Database className="w-4 h-4" />
-            <span>Database & Payment Details</span>
+            <span>Database & Shop Details</span>
           </button>
 
           <button
@@ -839,23 +839,22 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
           </div>
         )}
 
-        {/* TAB 3: DATABASE & PAYMENT DETAILS */}
+        {/* TAB 3: DATABASE & SHOP DETAILS */}
         {activeTab === 'database' && (
           <div className="space-y-6">
-            {/* Shop Payment Information */}
+            {/* Shop Contact & Helpline Details */}
             <div className="p-5 bg-midnight-900 rounded-2xl border border-festive-gold/40 space-y-4">
               <div className="flex items-center gap-2 text-festive-yellow font-bold text-sm">
                 <Smartphone className="w-5 h-5" />
-                <span>Shop UPI & Digital Payment Details</span>
+                <span>Shop Contact & Helpline Details</span>
               </div>
               
               <div className="max-w-md text-xs">
                 <div className="bg-midnight-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                  <div className="text-emerald-400 font-bold text-sm">📱 GPay / PhonePe / Paytm</div>
+                  <div className="text-emerald-400 font-bold text-sm">📞 Direct Helpline & WhatsApp</div>
                   <div className="space-y-1 text-slate-300">
-                    <div>UPI / Mobile Number: <strong className="text-white font-mono">63801 15587</strong></div>
-                    <div>UPI Name: <strong className="text-white">Sri Jeyam Crackers</strong></div>
-                    <div>UPI ID: <strong className="text-white font-mono">6380115587@upi</strong></div>
+                    <div>Contact Number: <strong className="text-white font-mono">6380115587</strong></div>
+                    <div>Shop Name: <strong className="text-white">Sri Jeyam Crackers</strong></div>
                   </div>
                 </div>
               </div>

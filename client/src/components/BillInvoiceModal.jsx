@@ -75,7 +75,7 @@ export default function BillInvoiceModal({
   const [customerPhone, setCustomerPhone] = useState(order?.phone_number || order?.whatsapp_number || order?.phone || '');
   const [customerAddress, setCustomerAddress] = useState(order?.address || '');
   const [customerCity, setCustomerCity] = useState(order?.city || 'Tamil Nadu');
-  const [paymentMode, setPaymentMode] = useState(order?.payment_method || 'Cash / UPI');
+  const [paymentMode, setPaymentMode] = useState(order?.payment_method || 'Cash / Online');
   const [packagingCharge, setPackagingCharge] = useState(order?.packaging_charge || 0);
   const [deliveryCharge, setDeliveryCharge] = useState(order?.delivery_charge || 0);
   const [items, setItems] = useState(() => parseOrderItems(order));
@@ -89,7 +89,7 @@ export default function BillInvoiceModal({
       setCustomerPhone(order.phone_number || order.whatsapp_number || order.phone || '');
       setCustomerAddress(order.address || '');
       setCustomerCity(order.city || 'Tamil Nadu');
-      setPaymentMode(order.payment_method || 'Cash / UPI');
+      setPaymentMode(order.payment_method || 'Cash / Online');
       setPackagingCharge(order.packaging_charge || 0);
       setDeliveryCharge(order.delivery_charge || 0);
       setItems(parseOrderItems(order));
@@ -100,7 +100,7 @@ export default function BillInvoiceModal({
       setCustomerPhone('');
       setCustomerAddress('');
       setCustomerCity('Tamil Nadu');
-      setPaymentMode('Cash / UPI');
+      setPaymentMode('Cash / Online');
       setPackagingCharge(0);
       setDeliveryCharge(0);
       setItems([]);
@@ -197,10 +197,7 @@ export default function BillInvoiceModal({
       (parseFloat(deliveryCharge) > 0 ? `*Delivery/Transport:* +₹${deliveryCharge}\n` : '') +
       `*NET PAYABLE AMOUNT:* *₹${grandTotal}*\n` +
       `-----------------------------\n\n` +
-      `*💳 Payment Details (UPI):*\n` +
-      `*GPay / PhonePe / Paytm:* 63801 15587\n` +
-      `*UPI ID:* 6380115587@upi\n\n` +
-      `*Contact:* 6380115587\n` +
+      `*For Enquiries & Parcel Dispatch:* 6380115587\n` +
       `Thank you for choosing Sri Jeyam Crackers Sivakasi! 🎆`;
 
     const cleanPhone = customerPhone ? customerPhone.replace(/[^0-9]/g, '').slice(-10) : '';
@@ -536,17 +533,16 @@ export default function BillInvoiceModal({
             {/* TOTALS & SUMMARY SECTION */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 border-t-2 border-slate-800 pt-4 mb-4 text-xs">
               
-              {/* Left Column: UPI Info on the Bill */}
+              {/* Left Column: Customer Support Info on the Bill */}
               <div className="sm:col-span-7 space-y-2.5">
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
                   <div className="text-[11px] font-black uppercase text-slate-800 flex items-center gap-1">
                     <Smartphone className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Payment Details (GPay / PhonePe / UPI)</span>
+                    <span>Customer & Dispatch Support</span>
                   </div>
                   <div className="text-[11px] text-slate-700 space-y-0.5">
-                    <div>GPay / PhonePe / Paytm: <strong className="font-mono text-slate-900 font-bold">63801 15587</strong></div>
-                    <div>UPI ID: <strong className="font-mono text-slate-900 font-bold">6380115587@upi</strong></div>
-                    <div className="text-[10px] text-slate-500 pt-0.5">Please share payment screenshot for instant dispatch.</div>
+                    <div>Helpline / WhatsApp: <strong className="font-mono text-slate-900 font-bold">6380115587</strong></div>
+                    <div className="text-[10px] text-slate-500 pt-0.5">For order verification and dispatch tracking, please contact our helpline.</div>
                   </div>
                 </div>
 

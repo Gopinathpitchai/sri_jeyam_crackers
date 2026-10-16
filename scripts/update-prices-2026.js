@@ -239,10 +239,6 @@ async function main() {
 
   currentStore.categories = categories;
   currentStore.products = products;
-  currentStore.payment_details = {
-    gpay_phonepe: '6380115587',
-    upi_id: '6380115587@upi'
-  };
   currentStore.site_settings = {
     id: 'default',
     shop_name: 'SRI JEYAM CRACKERS',

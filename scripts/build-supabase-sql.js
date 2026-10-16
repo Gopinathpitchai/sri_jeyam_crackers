@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS public.orders (
     subtotal NUMERIC(10, 2) NOT NULL DEFAULT 0,
     discount NUMERIC(10, 2) NOT NULL DEFAULT 0,
     total_amount NUMERIC(10, 2) NOT NULL DEFAULT 0,
-    payment_method TEXT DEFAULT 'Cash / UPI',
+    payment_method TEXT DEFAULT 'Cash / Online',
     status TEXT NOT NULL DEFAULT 'Pending',
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()

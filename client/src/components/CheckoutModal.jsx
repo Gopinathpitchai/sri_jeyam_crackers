@@ -172,22 +172,15 @@ export default function CheckoutModal({ isOpen, onClose, onViewBill }) {
               </div>
             </div>
 
-            {/* UPI Payment Details */}
+            {/* Order Confirmation Notice */}
             <div className="p-3.5 bg-amber-50/70 rounded-2xl border border-amber-200 text-left space-y-2 text-xs">
               <div className="text-amber-900 font-bold flex items-center justify-between">
-                <span>💳 UPI Payment Details:</span>
-                <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300 font-semibold">Instant UPI Available</span>
+                <span>📞 Order Confirmation:</span>
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300 font-semibold">Direct WhatsApp Support</span>
               </div>
               <div className="bg-white p-3 rounded-xl border border-amber-200 shadow-xs text-slate-700 space-y-1 text-xs">
-                <div className="font-bold text-amber-800">📱 GPay / PhonePe / Paytm</div>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] pt-0.5">
-                  <div>UPI Number: <strong className="text-slate-900 font-mono font-bold">63801 15587</strong></div>
-                  <div>UPI ID: <strong className="text-slate-900 font-mono font-bold">6380115587@upi</strong></div>
-                </div>
+                <div>For order confirmation and delivery dispatch details, please connect with us directly on WhatsApp or call <strong className="text-slate-900 font-mono font-bold">6380115587</strong>.</div>
               </div>
-              <p className="text-[10px] text-slate-500 italic text-center pt-1">
-                Please share the payment screenshot on WhatsApp after paying.
-              </p>
             </div>
 
             {/* Next Steps Buttons */}

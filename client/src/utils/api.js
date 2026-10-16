@@ -117,7 +117,7 @@ export const api = {
       subtotal: orderData.subtotal || 0,
       discount: orderData.discount || 0,
       total_amount: orderData.total_amount || 0,
-      payment_method: orderData.payment_method || 'Cash / UPI',
+      payment_method: orderData.payment_method || 'Cash / Online',
       status: 'Pending'
     };
 
