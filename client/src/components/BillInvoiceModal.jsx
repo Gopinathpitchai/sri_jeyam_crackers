@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Printer, MessageSquare, X, Plus, Trash2, Check, Download, 
-  Smartphone, Phone, Calendar, User, MapPin, Hash, Sparkles, AlertCircle
+  Smartphone, Phone, Calendar, User, MapPin, Hash, Sparkles, AlertCircle, Percent
 } from 'lucide-react';
 
 function numberToWords(num) {
@@ -79,6 +79,14 @@ export default function BillInvoiceModal({
   const [packagingCharge, setPackagingCharge] = useState(order?.packaging_charge || 0);
   const [deliveryCharge, setDeliveryCharge] = useState(order?.delivery_charge || 0);
   const [items, setItems] = useState(() => parseOrderItems(order));
+  const [billDiscount, setBillDiscount] = useState(() => {
+    if (order?.discount_percent) return order.discount_percent;
+    const initialItems = parseOrderItems(order);
+    if (initialItems.length > 0 && initialItems[0].discount_percent !== undefined) {
+      return initialItems[0].discount_percent;
+    }
+    return 83;
+  });
 
   // Sync state whenever order prop changes or modal is re-opened
   useEffect(() => {
@@ -92,7 +100,10 @@ export default function BillInvoiceModal({
       setPaymentMode(order.payment_method || 'Cash / Online');
       setPackagingCharge(order.packaging_charge || 0);
       setDeliveryCharge(order.delivery_charge || 0);
-      setItems(parseOrderItems(order));
+      const parsed = parseOrderItems(order);
+      setItems(parsed);
+      const initDisc = order.discount_percent || (parsed.length > 0 ? parsed[0].discount_percent : 83);
+      setBillDiscount(initDisc);
     } else {
       setInvoiceNumber(`SJC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`);
       setInvoiceDate(new Date().toISOString().split('T')[0]);
@@ -104,8 +115,60 @@ export default function BillInvoiceModal({
       setPackagingCharge(0);
       setDeliveryCharge(0);
       setItems([]);
+      setBillDiscount(83);
     }
   }, [order]);
+
+  // Apply a new discount percentage to ALL items on this bill
+  const handleApplyBillDiscount = (targetDiscount) => {
+    const disc = parseInt(targetDiscount);
+    if (isNaN(disc) || disc < 0 || disc > 100) return;
+    setBillDiscount(disc);
+    setItems(prevItems => prevItems.map(it => {
+      const orig = parseFloat(it.original_price || 0);
+      const newOffer = Math.round(orig * (1 - disc / 100));
+      return {
+        ...it,
+        discount_percent: disc,
+        offer_price: newOffer,
+        total: newOffer * it.quantity
+      };
+    }));
+  };
+
+  // Modify discount percentage for a single item in the bill
+  const handleItemDiscountChange = (index, newDiscVal) => {
+    const disc = parseInt(newDiscVal);
+    const updated = [...items];
+    const it = updated[index];
+    const validDisc = isNaN(disc) ? 0 : Math.min(100, Math.max(0, disc));
+    const orig = parseFloat(it.original_price || 0);
+    const newOffer = Math.round(orig * (1 - validDisc / 100));
+    updated[index] = {
+      ...it,
+      discount_percent: validDisc,
+      offer_price: newOffer,
+      total: newOffer * it.quantity
+    };
+    setItems(updated);
+  };
+
+  // Modify net offer price directly for a single item in the bill
+  const handleItemRateChange = (index, newRateVal) => {
+    const rate = parseFloat(newRateVal);
+    const updated = [...items];
+    const it = updated[index];
+    const validRate = isNaN(rate) ? 0 : Math.max(0, rate);
+    const orig = parseFloat(it.original_price || 0);
+    const computedDisc = orig > 0 ? Math.round(((orig - validRate) / orig) * 100) : 0;
+    updated[index] = {
+      ...it,
+      offer_price: validRate,
+      discount_percent: Math.min(100, Math.max(0, computedDisc)),
+      total: validRate * it.quantity
+    };
+    setItems(updated);
+  };
 
   // Product Picker for counter billing
   const [selectedProductId, setSelectedProductId] = useState('');
@@ -118,8 +181,8 @@ export default function BillInvoiceModal({
     if (!prod) return;
 
     const orig = parseFloat(prod.original_price || 0);
-    const disc = prod.discount_percent || 83;
-    const offer = parseFloat(prod.offer_price || Math.round(orig * (1 - disc / 100)));
+    const disc = parseInt(billDiscount) || prod.discount_percent || 83;
+    const offer = Math.round(orig * (1 - disc / 100));
     const qty = parseInt(addQty) || 1;
 
     // Check if already in items
@@ -171,6 +234,9 @@ export default function BillInvoiceModal({
     return sum + (offer * it.quantity);
   }, 0);
   const discountSavings = Math.max(0, grossTotal - netItemsTotal);
+  const effectiveDiscountPercent = grossTotal > 0
+    ? Math.round((discountSavings / grossTotal) * 100)
+    : (parseInt(billDiscount) || 83);
   const grandTotal = Math.round(netItemsTotal + parseFloat(packagingCharge || 0) + parseFloat(deliveryCharge || 0));
 
   const handlePrint = () => {
@@ -192,7 +258,7 @@ export default function BillInvoiceModal({
       `*Order Items:*\n${itemsSummary}\n\n` +
       `-----------------------------\n` +
       `*Actual MRP Total:* ₹${Math.round(grossTotal)}\n` +
-      `*83% Festive Discount:* -₹${Math.round(discountSavings)}\n` +
+      `*Festive Discount (-${effectiveDiscountPercent}%):* -₹${Math.round(discountSavings)}\n` +
       (parseFloat(packagingCharge) > 0 ? `*Packaging/Packing:* +₹${packagingCharge}\n` : '') +
       (parseFloat(deliveryCharge) > 0 ? `*Delivery/Transport:* +₹${deliveryCharge}\n` : '') +
       `*NET PAYABLE AMOUNT:* *₹${grandTotal}*\n` +
@@ -226,6 +292,9 @@ export default function BillInvoiceModal({
         address: customerAddress || 'Counter Pickup',
         city: customerCity || 'Sivakasi',
         items,
+        subtotal: Math.round(grossTotal),
+        discount: Math.round(discountSavings),
+        discount_percent: effectiveDiscountPercent,
         total_amount: grandTotal,
         status: 'Confirmed',
         payment_method: paymentMode
@@ -410,43 +479,94 @@ export default function BillInvoiceModal({
 
                 <div className="sm:text-right flex flex-col justify-end text-[11px] text-slate-500">
                   <div>Festival: <strong>Diwali Special 2026</strong></div>
-                  <div>Discount Scheme: <strong className="text-red-600">FLAT 83% OFF Sivakasi Wholesale</strong></div>
+                  <div>Discount Scheme: <strong className="text-red-600">FLAT {effectiveDiscountPercent}% OFF Sivakasi Wholesale</strong></div>
                   <div>Origin: <strong>Sivakasi Certified Green Crackers</strong></div>
                 </div>
               </div>
             </div>
 
-            {/* EDITABLE CUSTOMER INPUTS (FOR COUNTER BILLING - Hidden in Print) */}
-            <div className="no-print mb-4 p-3 bg-slate-100 rounded-xl border border-slate-300 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-              <div>
-                <label className="block text-slate-600 font-bold mb-0.5">Customer Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter name"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs"
-                />
+            {/* EDITABLE CUSTOMER INPUTS & DISCOUNT TOOL (FOR COUNTER BILLING - Hidden in Print) */}
+            <div className="no-print mb-4 p-3.5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200 text-xs space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div>
+                  <label className="block text-slate-700 font-bold mb-0.5">Customer Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter name"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs focus:ring-1 focus:ring-amber-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-700 font-bold mb-0.5">Customer Mobile</label>
+                  <input
+                    type="text"
+                    placeholder="Enter phone"
+                    value={customerPhone}
+                    onChange={(e) => setCustomerPhone(e.target.value)}
+                    className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs focus:ring-1 focus:ring-amber-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-700 font-bold mb-0.5">City / Town</label>
+                  <input
+                    type="text"
+                    placeholder="City"
+                    value={customerCity}
+                    onChange={(e) => setCustomerCity(e.target.value)}
+                    className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs focus:ring-1 focus:ring-amber-500"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-slate-600 font-bold mb-0.5">Customer Mobile</label>
-                <input
-                  type="text"
-                  placeholder="Enter phone"
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs"
-                />
-              </div>
-              <div>
-                <label className="block text-slate-600 font-bold mb-0.5">City / Town</label>
-                <input
-                  type="text"
-                  placeholder="City"
-                  value={customerCity}
-                  onChange={(e) => setCustomerCity(e.target.value)}
-                  className="w-full p-1.5 rounded bg-white border border-slate-300 text-slate-900 text-xs"
-                />
+
+              {/* CUSTOMER BILL DISCOUNT TOOL */}
+              <div className="pt-2 border-t border-amber-200/80 flex flex-wrap items-center justify-between gap-2 bg-white/70 p-2.5 rounded-lg border border-amber-100">
+                <div className="flex items-center gap-2">
+                  <span className="font-extrabold text-amber-950 flex items-center gap-1">
+                    <Percent className="w-3.5 h-3.5 text-amber-600" />
+                    Customer Discount % (தள்ளுபடி):
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <input
+                      type="number"
+                      min="0"
+                      max="100"
+                      value={billDiscount}
+                      onChange={(e) => setBillDiscount(e.target.value)}
+                      className="w-16 p-1 text-center font-black font-mono bg-white border border-amber-300 rounded text-slate-900 text-xs focus:ring-1 focus:ring-amber-500"
+                    />
+                    <span className="font-bold text-amber-900">%</span>
+                    <button
+                      type="button"
+                      onClick={() => handleApplyBillDiscount(billDiscount)}
+                      className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg text-xs transition-all shadow-xs flex items-center gap-1"
+                      title="Apply this discount percentage to all items in this bill"
+                    >
+                      <Sparkles className="w-3 h-3" />
+                      <span>Apply to All Items</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Quick Presets */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[11px] text-amber-800 font-semibold">Quick Presets:</span>
+                  {[85, 83, 80, 75, 70].map(pct => (
+                    <button
+                      key={pct}
+                      type="button"
+                      onClick={() => handleApplyBillDiscount(pct)}
+                      className={`px-2.5 py-0.5 rounded-md text-[11px] font-black border transition-all ${
+                        parseInt(billDiscount) === pct
+                          ? 'bg-amber-600 text-white border-amber-700 shadow-xs'
+                          : 'bg-white text-amber-900 border-amber-300 hover:bg-amber-100'
+                      }`}
+                    >
+                      {pct}%
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -459,8 +579,8 @@ export default function BillInvoiceModal({
                     <th className="p-2">Description / Cracker Item</th>
                     <th className="p-2 w-16 text-center">Packing</th>
                     <th className="p-2 w-16 text-right">MRP (₹)</th>
-                    <th className="p-2 w-16 text-center">Disc %</th>
-                    <th className="p-2 w-16 text-right">Rate (₹)</th>
+                    <th className="p-2 w-20 text-center">Disc %</th>
+                    <th className="p-2 w-24 text-right">Rate (₹)</th>
                     <th className="p-2 w-16 text-center">Qty</th>
                     <th className="p-2 w-20 text-right">Amount (₹)</th>
                     <th className="p-2 w-10 text-center no-print">Action</th>
@@ -479,10 +599,32 @@ export default function BillInvoiceModal({
                           ₹{it.original_price}
                         </td>
                         <td className="p-2 text-center text-red-600 font-bold">
-                          {it.discount_percent || 83}%
+                          <span className="print-only">{it.discount_percent !== undefined ? it.discount_percent : 83}%</span>
+                          <div className="no-print flex items-center justify-center">
+                            <input
+                              type="number"
+                              min="0"
+                              max="100"
+                              value={it.discount_percent !== undefined ? it.discount_percent : 83}
+                              onChange={(e) => handleItemDiscountChange(idx, e.target.value)}
+                              className="w-14 p-1 text-center font-bold text-red-600 bg-red-50/70 border border-red-300 rounded text-xs focus:ring-1 focus:ring-red-500"
+                              title="Edit item discount %"
+                            />
+                          </div>
                         </td>
                         <td className="p-2 text-right font-bold text-slate-900 font-mono">
-                          ₹{it.offer_price}
+                          <span className="print-only">₹{it.offer_price}</span>
+                          <div className="no-print flex items-center justify-end gap-0.5">
+                            <span className="text-slate-400 text-[10px]">₹</span>
+                            <input
+                              type="number"
+                              min="0"
+                              value={it.offer_price}
+                              onChange={(e) => handleItemRateChange(idx, e.target.value)}
+                              className="w-16 p-1 text-right font-bold text-slate-900 bg-white border border-slate-300 rounded text-xs focus:ring-1 focus:ring-amber-500 font-mono"
+                              title="Or type custom net price"
+                            />
+                          </div>
                         </td>
                         <td className="p-2 text-center font-bold font-mono">
                           <span className="print-only">{it.quantity}</span>
@@ -559,7 +701,7 @@ export default function BillInvoiceModal({
                 </div>
 
                 <div className="flex justify-between text-red-600 font-bold">
-                  <span>Festive Discount (-83%):</span>
+                  <span>Festive Discount (-{effectiveDiscountPercent}%):</span>
                   <span className="font-mono">-₹{Math.round(discountSavings)}</span>
                 </div>
 
@@ -643,7 +785,7 @@ export default function BillInvoiceModal({
         {/* Bottom Bar - Hidden in Print */}
         <div className="no-print bg-midnight-900 border-t border-slate-800 p-3 px-6 flex items-center justify-between text-xs">
           <div className="text-slate-400">
-            Items in bill: <strong className="text-white">{items.length}</strong> • Total Value: <strong className="text-festive-gold font-mono text-sm">₹{grandTotal}</strong>
+            Items in bill: <strong className="text-white">{items.length}</strong> • Total Value: <strong className="text-festive-gold font-mono text-sm">₹{grandTotal}</strong> <span className="text-emerald-400 font-bold ml-1.5">({effectiveDiscountPercent}% OFF Applied)</span>
           </div>
 
           <div className="flex items-center gap-2">
