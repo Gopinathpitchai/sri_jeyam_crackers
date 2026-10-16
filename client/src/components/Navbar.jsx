@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Phone, ShoppingCart, Search, Flame, Sparkles, ShieldCheck, Lock, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
-export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 75 }) {
+export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 83 }) {
   const { totalItems, total, setIsCartOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -15,11 +15,9 @@ export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 
           <span>DIWALI SPECIAL MEGA OFFER: <strong className="text-amber-200 underline decoration-wavy">FLAT {discountPercent}% OFF</strong> ON ALL CRACKERS!</span>
           <Sparkles className="w-4 h-4 text-amber-200 animate-sparkle" />
         </div>
-        <div className="hidden md:flex items-center gap-4 text-xs">
+        <div className="hidden md:flex items-center gap-2 text-xs">
           <span>📞 Contact & Orders:</span>
           <a href="tel:6380115587" className="hover:text-amber-200 font-mono transition-colors font-bold">6380115587</a>
-          <span>/</span>
-          <a href="tel:9363243938" className="hover:text-amber-200 font-mono transition-colors font-bold">9363243938</a>
         </div>
       </div>
 
@@ -120,18 +118,12 @@ export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 shadow-xl">
-          <div className="grid grid-cols-2 gap-2 text-center">
+          <div className="text-center">
             <a 
               href="tel:6380115587"
-              className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-700 flex items-center justify-center gap-1.5"
+              className="w-full p-2.5 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-700 flex items-center justify-center gap-1.5"
             >
-              <Phone className="w-3.5 h-3.5" /> 6380115587
-            </a>
-            <a 
-              href="tel:9363243938"
-              className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-700 flex items-center justify-center gap-1.5"
-            >
-              <Phone className="w-3.5 h-3.5" /> 9363243938
+              <Phone className="w-3.5 h-3.5" /> Call: 6380115587
             </a>
           </div>
           <div className="flex flex-col space-y-2 text-sm font-semibold text-slate-700">

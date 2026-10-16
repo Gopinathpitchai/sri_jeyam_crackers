@@ -66,10 +66,10 @@ function getInitialStore() {
       id: 'default',
       shop_name: 'SRI JEYAM CRACKERS',
       phone1: '6380115587',
-      phone2: '9363243938',
+      phone2: '6380115587',
       whatsapp_number: '6380115587',
-      offer_title: 'DIWALI SPECIAL OFFER',
-      discount_percent: 50,
+      offer_title: 'DIWALI SPECIAL OFFER - 83% OFF',
+      discount_percent: 83,
       tagline: 'Celebrate Diwali with More Crackers & More Savings! HAPPY DIWALI!',
       min_order_amount: 500
     }

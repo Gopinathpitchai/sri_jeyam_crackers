@@ -39,7 +39,7 @@ export default function App() {
   // Active discount percent derived from products catalog
   const discountPercent = products.length > 0 && products[0]?.discount_percent !== undefined 
     ? products[0].discount_percent 
-    : 75;
+    : 83;
 
   // Sync with browser URL navigation
   useEffect(() => {
@@ -50,6 +50,18 @@ export default function App() {
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
+
+  // Validate admin token session if on admin route
+  useEffect(() => {
+    if (isAdminRoute && adminToken) {
+      api.checkAdminSession(adminToken).catch((err) => {
+        if (err.message === 'Session invalid') {
+          setAdminToken('');
+          setAdminUser(null);
+        }
+      });
+    }
+  }, [isAdminRoute]);
 
   // Load catalog on start
   const loadStoreData = async () => {
@@ -148,7 +160,7 @@ export default function App() {
           <SafetyTips />
         </main>
 
-        {/* Footer with shop contact numbers: 6380115587 / 9363243938 */}
+        {/* Footer with shop contact number: 6380115587 */}
         <Footer discountPercent={discountPercent} />
 
         {/* Full Cart Drawer (Can be opened from top navbar) */}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Phone, MessageSquare, ShoppingCart, Sparkles, CheckCircle, ArrowDown, Flame } from 'lucide-react';
 
-export default function HeroSection({ onExploreClick, onOpenCart, discountPercent = 75 }) {
-  const whatsappUrl = `https://wa.me/916370115587?text=${encodeURIComponent(`Hello Sri Jeyam Crackers! I would like to order Diwali crackers with Flat ${discountPercent}% discount.`)}`;
+export default function HeroSection({ onExploreClick, onOpenCart, discountPercent = 83 }) {
+  const whatsappUrl = `https://wa.me/916380115587?text=${encodeURIComponent(`Hello Sri Jeyam Crackers! I would like to order Diwali crackers with Flat ${discountPercent}% discount.`)}`;
 
   return (
     <section className="relative overflow-hidden pt-8 pb-16 px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export default function HeroSection({ onExploreClick, onOpenCart, discountPercen
           </div>
         </div>
 
-        {/* 3. Center Highlight: FLAT 75% OFF Starburst Poster Recreation */}
+        {/* 3. Center Highlight: FLAT 83% OFF Starburst Poster Recreation */}
         <div className="relative my-6 sm:my-8 flex justify-center items-center">
           <div className="relative group cursor-pointer" onClick={onExploreClick}>
             {/* Outer Glow Ring */}
@@ -110,18 +110,10 @@ export default function HeroSection({ onExploreClick, onOpenCart, discountPercen
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xl sm:text-2xl md:text-3xl font-black text-amber-300">
             <a 
               href="tel:6380115587" 
-              className="flex items-center gap-2 hover:text-white transition-colors bg-black/25 hover:bg-black/35 px-4 py-1.5 rounded-xl border border-amber-400/40"
+              className="flex items-center gap-2 hover:text-white transition-colors bg-black/25 hover:bg-black/35 px-6 py-2 rounded-xl border border-amber-400/40"
             >
-              <Phone className="w-5 h-5 text-amber-300 animate-bounce" />
+              <Phone className="w-6 h-6 text-amber-300 animate-bounce" />
               <span>6380115587</span>
-            </a>
-            <span className="text-amber-400 font-normal">/</span>
-            <a 
-              href="tel:9363243938" 
-              className="flex items-center gap-2 hover:text-white transition-colors bg-black/25 hover:bg-black/35 px-4 py-1.5 rounded-xl border border-amber-400/40"
-            >
-              <Phone className="w-5 h-5 text-amber-300" />
-              <span>9363243938</span>
             </a>
           </div>
         </div>

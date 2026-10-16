@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, MapPin, Sparkles, Lock, Heart } from 'lucide-react';
 
-export default function Footer({ discountPercent = 75 }) {
+export default function Footer({ discountPercent = 83 }) {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-12 pb-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 relative z-10">
@@ -34,20 +34,14 @@ export default function Footer({ discountPercent = 75 }) {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-red-600 flex-shrink-0" />
-              <a href="tel:9363243938" className="hover:text-red-600 font-mono font-bold text-slate-800">
-                9363243938
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
               <MessageSquare className="w-4 h-4 text-emerald-600 flex-shrink-0" />
               <a 
-                href="https://wa.me/916370115587" 
+                href="https://wa.me/916380115587" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-emerald-700 font-semibold text-emerald-600"
               >
-                WhatsApp Order Line
+                WhatsApp Order Line (6380115587)
               </a>
             </div>
           </div>

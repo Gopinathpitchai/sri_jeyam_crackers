@@ -8,6 +8,21 @@ const supabaseHeaders = {
   'Content-Type': 'application/json'
 };
 
+const getAuthToken = (token) => token || localStorage.getItem('sjc_admin_token') || '';
+
+const handleAdminResponse = async (res, defaultErrMsg) => {
+  if (!res.ok) {
+    if (res.status === 401) {
+      localStorage.removeItem('sjc_admin_token');
+      localStorage.removeItem('sjc_admin_user');
+      throw new Error('Admin session expired or invalid. Please refresh the page and log in again.');
+    }
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || defaultErrMsg);
+  }
+  return res.json();
+};
+
 export const api = {
   // Public Products - Queries Supabase directly with fallback to API
   getProducts: async (params = {}) => {
@@ -173,10 +188,10 @@ export const api = {
     return {
       shop_name: 'SRI JEYAM CRACKERS',
       phone1: '6380115587',
-      phone2: '9363243938',
+      phone2: '6380115587',
       whatsapp_number: '6380115587',
-      offer_title: 'DIWALI SPECIAL OFFER',
-      discount_percent: 75,
+      offer_title: 'DIWALI SPECIAL OFFER - 83% OFF',
+      discount_percent: 83,
       tagline: 'Celebrate Diwali with More Crackers & More Savings! HAPPY DIWALI!',
       min_order_amount: 500
     };
@@ -207,9 +222,14 @@ export const api = {
 
   checkAdminSession: async (token) => {
     const res = await fetch(`${API_BASE}/auth/me`, {
-      headers: { 'Authorization': `Bearer ${token}` }
+      headers: { 'Authorization': `Bearer ${getAuthToken(token)}` }
     });
-    if (!res.ok) throw new Error('Session invalid');
+    if (res.status === 401) {
+      localStorage.removeItem('sjc_admin_token');
+      localStorage.removeItem('sjc_admin_user');
+      throw new Error('Session invalid');
+    }
+    if (!res.ok) throw new Error('Session check failed');
     return res.json();
   },
 
@@ -219,15 +239,11 @@ export const api = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify(productData)
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error || 'Failed to add product');
-    }
-    return res.json();
+    return handleAdminResponse(res, 'Failed to add product');
   },
 
   bulkAddProducts: async (products, token) => {
@@ -235,15 +251,11 @@ export const api = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify({ products })
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error || 'Failed to bulk import products');
-    }
-    return res.json();
+    return handleAdminResponse(res, 'Failed to bulk import products');
   },
 
   batchUpdateDiscounts: async (category, discount_percent, token) => {
@@ -251,12 +263,11 @@ export const api = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify({ category, discount_percent })
     });
-    if (!res.ok) throw new Error('Failed to update batch discounts');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to update batch discounts');
   },
 
   updateProduct: async (id, productData, token) => {
@@ -264,21 +275,19 @@ export const api = {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify(productData)
     });
-    if (!res.ok) throw new Error('Failed to update product');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to update product');
   },
 
   deleteProduct: async (id, token) => {
     const res = await fetch(`${API_BASE}/products/${id}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${token}` }
+      headers: { 'Authorization': `Bearer ${getAuthToken(token)}` }
     });
-    if (!res.ok) throw new Error('Failed to delete product');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to delete product');
   },
 
   // Admin Image Upload
@@ -287,25 +296,20 @@ export const api = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify({ image: imageData, filename })
     });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({ error: 'Upload failed' }));
-      throw new Error(err.error || 'Failed to upload image');
-    }
-    return res.json();
+    return handleAdminResponse(res, 'Failed to upload image');
   },
 
   // Admin Orders
   getAdminOrders: async (token, params = {}) => {
     const query = new URLSearchParams(params).toString();
     const res = await fetch(`${API_BASE}/orders${query ? '?' + query : ''}`, {
-      headers: { 'Authorization': `Bearer ${token}` }
+      headers: { 'Authorization': `Bearer ${getAuthToken(token)}` }
     });
-    if (!res.ok) throw new Error('Failed to fetch orders');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to fetch orders');
   },
 
   updateOrderStatus: async (id, status, token) => {
@@ -313,21 +317,19 @@ export const api = {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify({ status })
     });
-    if (!res.ok) throw new Error('Failed to update order status');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to update order status');
   },
 
   deleteOrder: async (id, token) => {
     const res = await fetch(`${API_BASE}/orders/${id}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${token}` }
+      headers: { 'Authorization': `Bearer ${getAuthToken(token)}` }
     });
-    if (!res.ok) throw new Error('Failed to delete order');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to delete order');
   },
 
   // Admin Settings
@@ -336,11 +338,10 @@ export const api = {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${getAuthToken(token)}`
       },
       body: JSON.stringify(settingsData)
     });
-    if (!res.ok) throw new Error('Failed to update settings');
-    return res.json();
+    return handleAdminResponse(res, 'Failed to update settings');
   }
 };

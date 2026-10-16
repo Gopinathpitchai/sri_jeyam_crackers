@@ -176,8 +176,6 @@ export default function OrderTrackModal({ isOpen, onClose, onViewBill }) {
           <div className="pt-4 border-t border-slate-200 text-center text-xs text-slate-500">
             <span>Need assistance with your order? Call: </span>
             <a href="tel:6380115587" className="text-red-600 font-bold hover:underline">6380115587</a>
-            <span> / </span>
-            <a href="tel:9363243938" className="text-red-600 font-bold hover:underline">9363243938</a>
           </div>
         </div>
       </div>

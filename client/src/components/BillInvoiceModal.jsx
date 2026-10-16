@@ -36,7 +36,7 @@ function parseOrderItems(order) {
 
   return raw.map(it => {
     const orig = parseFloat(it.original_price || it.price || (it.offer_price ? it.offer_price * 4 : 0));
-    const disc = it.discount_percent !== undefined ? it.discount_percent : 75;
+    const disc = it.discount_percent !== undefined ? it.discount_percent : 83;
     const offer = parseFloat(it.offer_price !== undefined ? it.offer_price : (orig ? Math.round(orig * (1 - disc / 100)) : 0));
     const qty = parseInt(it.quantity) || 1;
     return {
@@ -118,7 +118,7 @@ export default function BillInvoiceModal({
     if (!prod) return;
 
     const orig = parseFloat(prod.original_price || 0);
-    const disc = prod.discount_percent || 75;
+    const disc = prod.discount_percent || 83;
     const offer = parseFloat(prod.offer_price || Math.round(orig * (1 - disc / 100)));
     const qty = parseInt(addQty) || 1;
 
@@ -192,7 +192,7 @@ export default function BillInvoiceModal({
       `*Order Items:*\n${itemsSummary}\n\n` +
       `-----------------------------\n` +
       `*Actual MRP Total:* ₹${Math.round(grossTotal)}\n` +
-      `*75% Festive Discount:* -₹${Math.round(discountSavings)}\n` +
+      `*83% Festive Discount:* -₹${Math.round(discountSavings)}\n` +
       (parseFloat(packagingCharge) > 0 ? `*Packaging/Packing:* +₹${packagingCharge}\n` : '') +
       (parseFloat(deliveryCharge) > 0 ? `*Delivery/Transport:* +₹${deliveryCharge}\n` : '') +
       `*NET PAYABLE AMOUNT:* *₹${grandTotal}*\n` +
@@ -200,7 +200,7 @@ export default function BillInvoiceModal({
       `*💳 Payment Details (UPI):*\n` +
       `*GPay / PhonePe / Paytm:* 63801 15587\n` +
       `*UPI ID:* 6380115587@upi\n\n` +
-      `*Contact:* 6380115587 / 9363243938\n` +
+      `*Contact:* 6380115587\n` +
       `Thank you for choosing Sri Jeyam Crackers Sivakasi! 🎆`;
 
     const cleanPhone = customerPhone ? customerPhone.replace(/[^0-9]/g, '').slice(-10) : '';
@@ -367,7 +367,7 @@ export default function BillInvoiceModal({
                   </div>
                   <div className="text-[11px] text-slate-600 mt-1 space-y-0.5">
                     <div>Sivakasi Main Road, Sivakasi - 626123, Tamil Nadu, India</div>
-                    <div>Mobile: <strong>6380115587</strong> / <strong>9363243938</strong></div>
+                    <div>Mobile: <strong>6380115587</strong></div>
                     <div>Website: <strong>srijeyamcrackers.com</strong></div>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ export default function BillInvoiceModal({
 
                 <div className="sm:text-right flex flex-col justify-end text-[11px] text-slate-500">
                   <div>Festival: <strong>Diwali Special 2026</strong></div>
-                  <div>Discount Scheme: <strong className="text-red-600">FLAT 75% OFF Sivakasi Wholesale</strong></div>
+                  <div>Discount Scheme: <strong className="text-red-600">FLAT 83% OFF Sivakasi Wholesale</strong></div>
                   <div>Origin: <strong>Sivakasi Certified Green Crackers</strong></div>
                 </div>
               </div>
@@ -482,7 +482,7 @@ export default function BillInvoiceModal({
                           ₹{it.original_price}
                         </td>
                         <td className="p-2 text-center text-red-600 font-bold">
-                          {it.discount_percent || 75}%
+                          {it.discount_percent || 83}%
                         </td>
                         <td className="p-2 text-right font-bold text-slate-900 font-mono">
                           ₹{it.offer_price}
@@ -563,7 +563,7 @@ export default function BillInvoiceModal({
                 </div>
 
                 <div className="flex justify-between text-red-600 font-bold">
-                  <span>Festive Discount (-75%):</span>
+                  <span>Festive Discount (-83%):</span>
                   <span className="font-mono">-₹{Math.round(discountSavings)}</span>
                 </div>
 

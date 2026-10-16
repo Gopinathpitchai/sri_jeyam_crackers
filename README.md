@@ -4,8 +4,9 @@ Online Direct Selling & Admin Management Platform for **Sri Jeyam Crackers, Siva
 
 ## Features
 
-- **Diwali 2026 Price List:** Preloaded with 214 authentic cracker items across 19 categories directly from the Sivakasi factory price list.
-- **Flat 75% Festive Discount:** Automatic calculation of Actual MRP, 75% Discount, and Net Payable Rate.
+- **Diwali 2026 Price List:** Preloaded with 130 authentic cracker items across 21 categories directly from the factory price list.
+- **Flat 83% Festive Discount:** Automatic calculation of Actual MRP, 83% Discount, and Net Payable Rate.
+- **Shop Contact Number:** 6380115587 (WhatsApp & Direct Call).
 - **Guest Storefront (No Login Required):** Quick shopping cart, item quantity stepper, address entry, and direct WhatsApp checkout.
 - **Big Picture Quick View:** Click any cracker product or picture to inspect in full-screen with interactive 150% zoom.
 - **Admin Portal (`/admin`):**

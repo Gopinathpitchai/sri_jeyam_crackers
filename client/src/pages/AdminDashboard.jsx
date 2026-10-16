@@ -38,7 +38,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
   // Batch Discount
   const [batchCategory, setBatchCategory] = useState('all');
-  const [batchDiscount, setBatchDiscount] = useState('75');
+  const [batchDiscount, setBatchDiscount] = useState('83');
   const [isBatchUpdating, setIsBatchUpdating] = useState(false);
 
   // Single Product Form
@@ -46,7 +46,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
     name: '',
     category: 'Sparklers',
     original_price: '',
-    discount_percent: 75,
+    discount_percent: 83,
     offer_price: '',
     pack_size: 'Box',
     description: '',
@@ -172,7 +172,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
     try {
       const orig = parseFloat(productForm.original_price);
-      const disc = parseInt(productForm.discount_percent) || 75;
+      const disc = parseInt(productForm.discount_percent) || 83;
       const offer = productForm.offer_price ? parseFloat(productForm.offer_price) : Math.round(orig * (1 - disc / 100));
 
       const newProd = await api.addProduct({
@@ -188,7 +188,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         name: '',
         category: 'Sparklers',
         original_price: '',
-        discount_percent: 75,
+        discount_percent: 83,
         offer_price: '',
         pack_size: 'Box',
         description: '',
@@ -224,6 +224,11 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
       setEditingProduct(null);
       showNotification(`Product "${updated.name}" updated! Price: ₹${orig}, Discount: ${disc}%, Net: ₹${offer}`);
     } catch (err) {
+      if (err.message && (err.message.includes('expired') || err.message.includes('Unauthorized') || err.message.includes('session') || err.message.includes('invalid'))) {
+        alert(err.message);
+        if (onLogout) onLogout();
+        return;
+      }
       alert(err.message || 'Failed to update product');
     }
   };
@@ -269,6 +274,11 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
       showNotification(`🎉 Successfully updated discounts to ${disc}%! All cracker prices updated.`);
     } catch (err) {
+      if (err.message && (err.message.includes('expired') || err.message.includes('Unauthorized') || err.message.includes('session') || err.message.includes('invalid'))) {
+        alert(err.message);
+        if (onLogout) onLogout();
+        return;
+      }
       alert(err.message || 'Failed to update batch discount');
     } finally {
       setIsBatchUpdating(false);
@@ -290,8 +300,8 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         const category = parts[1];
         const origPrice = parseFloat(parts[2]);
         const packSize = parts[3] || 'Box';
-        const disc = 75;
-        const offer = Math.round(origPrice * 0.25);
+        const disc = 83;
+        const offer = Math.round(origPrice * 0.17);
 
         if (name && !isNaN(origPrice)) {
           parsed.push({
@@ -676,7 +686,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                         </td>
                         <td className="p-3">
                           <span className="px-2 py-0.5 rounded bg-red-950/80 text-red-300 font-bold border border-red-800/50">
-                            {prod.discount_percent || 75}% OFF
+                            {prod.discount_percent || 83}% OFF
                           </span>
                         </td>
                         <td className="p-3 font-black text-sm text-festive-gold font-mono">
@@ -1307,7 +1317,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                   type="submit"
                   className="px-5 py-2 rounded-xl bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs shadow-md"
                 >
-                  Import Products (75% Discount Applied)
+                  Import Products (83% Discount Applied)
                 </button>
               </div>
             </form>
@@ -1353,7 +1363,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
             />
             <h3 className="text-base font-black text-white">{viewingBigImage.name}</h3>
             <p className="text-xs text-amber-300 font-mono mt-1">
-              Packing: {viewingBigImage.pack_size || 'Box'} • MRP: ₹{viewingBigImage.original_price} • Net Rate: ₹{viewingBigImage.offer_price} ({viewingBigImage.discount_percent || 75}% OFF)
+              Packing: {viewingBigImage.pack_size || 'Box'} • MRP: ₹{viewingBigImage.original_price} • Net Rate: ₹{viewingBigImage.offer_price} ({viewingBigImage.discount_percent || 83}% OFF)
             </p>
             <div className="mt-4 flex justify-center gap-2">
               <button

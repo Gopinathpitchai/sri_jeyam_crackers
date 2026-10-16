@@ -120,7 +120,7 @@ export default function CartDrawer({ onProceedCheckout }) {
                 </div>
                 <h3 className="text-base font-bold text-slate-900">Your Cart is Empty</h3>
                 <p className="text-xs text-slate-500 max-w-xs mx-auto mt-1">
-                  Add crackers from the catalog to enjoy Flat 75% Diwali discounts!
+                  Add crackers from the catalog to enjoy Flat 83% Diwali discounts!
                 </p>
               </div>
             )}
