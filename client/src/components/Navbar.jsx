@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Phone, ShoppingCart, Search, Flame, Sparkles, ShieldCheck, Lock, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
-export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 83 }) {
+export default function Navbar({ onOpenTrack, onNavigateHome, discountPercent = 87 }) {
   const { totalItems, total, setIsCartOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

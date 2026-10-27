@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, MapPin, Sparkles, Lock, Heart } from 'lucide-react';
 
-export default function Footer({ discountPercent = 83 }) {
+export default function Footer({ discountPercent = 87 }) {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-12 pb-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 relative z-10">

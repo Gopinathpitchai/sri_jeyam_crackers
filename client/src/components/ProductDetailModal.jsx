@@ -22,7 +22,7 @@ export default function ProductDetailModal({ product, onClose }) {
   if (!product) return null;
 
   const origPrice = parseFloat(product.original_price || 0);
-  const discountPct = product.discount_percent || 83;
+  const discountPct = product.discount_percent || 87;
   const offerPrice = parseFloat(product.offer_price || Math.round(origPrice * (1 - discountPct / 100)));
   const savings = Math.max(0, origPrice - offerPrice);
   const totalItemCost = offerPrice * quantity;

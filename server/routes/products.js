@@ -323,12 +323,16 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
       }
     }
 
-    // 3. If updating all products, also update site_settings discount_percent in Supabase
+    // 3. If updating all products, also update site_settings discount_percent & offer_title in Supabase
     if (isAll && hasSupabase) {
       try {
         await supabase
           .from('site_settings')
-          .update({ discount_percent: disc, updated_at: new Date().toISOString() })
+          .update({ 
+            discount_percent: disc, 
+            offer_title: `DIWALI SPECIAL OFFER - ${disc}% OFF`,
+            updated_at: new Date().toISOString() 
+          })
           .eq('id', 'default');
       } catch (sErr) {
         console.warn('Could not update site_settings discount in Supabase:', sErr.message);
@@ -353,6 +357,7 @@ router.post('/batch-discount', requireAdmin, async (req, res) => {
     if (isAll) {
       store.site_settings = store.site_settings || {};
       store.site_settings.discount_percent = disc;
+      store.site_settings.offer_title = `DIWALI SPECIAL OFFER - ${disc}% OFF`;
     }
     saveLocalStore(store);
 

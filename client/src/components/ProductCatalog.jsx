@@ -42,7 +42,7 @@ export default function ProductCatalog({ products = [], categories = [], onNavig
           Diwali Crackers <span className="text-red-600">Price Catalog</span>
         </h2>
         <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-2">
-          Enjoy <strong className="text-red-600 font-bold">FLAT {products[0]?.discount_percent || 83}% OFF</strong> on every single cracker. Genuine Sivakasi quality crackers with maximum burst, sparkle, and complete safety.
+          Enjoy <strong className="text-red-600 font-bold">FLAT {products[0]?.discount_percent || 87}% OFF</strong> on every single cracker. Genuine Sivakasi quality crackers with maximum burst, sparkle, and complete safety.
         </p>
       </div>
 
@@ -102,10 +102,10 @@ export default function ProductCatalog({ products = [], categories = [], onNavig
           {filteredProducts.map((product) => {
             const qty = getQty(product.id);
             const origPrice = parseFloat(product.original_price || 0);
-            const offerPrice = parseFloat(product.offer_price !== undefined ? product.offer_price : Math.round(origPrice * 0.17));
+            const offerPrice = parseFloat(product.offer_price !== undefined ? product.offer_price : Math.round(origPrice * (1 - (product.discount_percent || 87) / 100)));
             const discountPct = product.discount_percent !== undefined 
               ? product.discount_percent 
-              : (origPrice > 0 ? Math.round((1 - offerPrice / origPrice) * 100) : 83);
+              : (origPrice > 0 ? Math.round((1 - offerPrice / origPrice) * 100) : 87);
 
             return (
               <div
@@ -248,7 +248,7 @@ export default function ProductCatalog({ products = [], categories = [], onNavig
             Diwali 2026 Price List Is Being Updated!
           </h3>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-6">
-            Welcome to <strong className="text-red-700">Sri Jeyam Crackers</strong>! Our complete fresh inventory with <strong className="text-red-600">Flat 83% Diwali Discount</strong> will be updated in the catalog.
+            Welcome to <strong className="text-red-700">Sri Jeyam Crackers</strong>! Our complete fresh inventory with <strong className="text-red-600">Flat {products[0]?.discount_percent || 87}% Diwali Discount</strong> will be updated in the catalog.
           </p>
 
           <div className="max-w-xs mx-auto mb-8">

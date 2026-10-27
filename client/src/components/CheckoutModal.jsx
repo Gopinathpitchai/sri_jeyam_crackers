@@ -100,7 +100,7 @@ export default function CheckoutModal({ isOpen, onClose, onViewBill }) {
       msg += `${idx + 1}. ${item.name} (${item.pack_size || '1 Box'}) x ${item.quantity} = ₹${item.total || (item.offer_price * item.quantity)}\n`;
     });
     msg += `\n*Total MRP:* ₹${completedOrder.subtotal}\n`;
-    msg += `*Diwali 83% Savings:* -₹${completedOrder.discount}\n`;
+    msg += `*Diwali Mega Savings:* -₹${completedOrder.discount}\n`;
     msg += `*🔥 Final Net Payable:* ₹${completedOrder.total_amount}\n\n`;
     msg += `Please confirm my order and send dispatch tracking details!`;
 

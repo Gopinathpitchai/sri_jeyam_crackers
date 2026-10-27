@@ -38,7 +38,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
   // Batch Discount
   const [batchCategory, setBatchCategory] = useState('all');
-  const [batchDiscount, setBatchDiscount] = useState('83');
+  const [batchDiscount, setBatchDiscount] = useState('87');
   const [isBatchUpdating, setIsBatchUpdating] = useState(false);
 
   // Single Product Form
@@ -46,7 +46,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
     name: '',
     category: 'Sparklers',
     original_price: '',
-    discount_percent: 83,
+    discount_percent: 87,
     offer_price: '',
     pack_size: 'Box',
     description: '',
@@ -73,6 +73,16 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
       setCategories(catData || []);
       setSettings(settsData);
       setDbStatus(statusData);
+
+      // Auto-sync Batch Discount Tool with current active discount
+      const activeDisc = settsData?.discount_percent 
+        ?? (prodData && prodData.length > 0 && prodData[0].discount_percent !== undefined ? prodData[0].discount_percent : 87);
+      
+      setBatchDiscount(activeDisc.toString());
+      setProductForm(prev => ({
+        ...prev,
+        discount_percent: activeDisc
+      }));
     } catch (err) {
       console.error('Error fetching dashboard data:', err);
     } finally {
@@ -172,7 +182,8 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
 
     try {
       const orig = parseFloat(productForm.original_price);
-      const disc = parseInt(productForm.discount_percent) || 83;
+      const activeDefaultDisc = settings?.discount_percent || 87;
+      const disc = parseInt(productForm.discount_percent) || activeDefaultDisc;
       const offer = productForm.offer_price ? parseFloat(productForm.offer_price) : Math.round(orig * (1 - disc / 100));
 
       const newProd = await api.addProduct({
@@ -188,7 +199,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         name: '',
         category: 'Sparklers',
         original_price: '',
-        discount_percent: 83,
+        discount_percent: activeDefaultDisc,
         offer_price: '',
         pack_size: 'Box',
         description: '',
@@ -261,6 +272,9 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         return p;
       }));
 
+      // Keep batch discount tool displaying the newly applied discount
+      setBatchDiscount(disc.toString());
+
       // Refresh products from API to ensure complete sync
       const freshProds = await api.getProducts().catch(() => null);
       if (freshProds && freshProds.length > 0) {
@@ -268,7 +282,11 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
       }
 
       if (batchCategory === 'all') {
-        setSettings(prev => prev ? { ...prev, discount_percent: disc } : prev);
+        setSettings(prev => prev ? { 
+          ...prev, 
+          discount_percent: disc,
+          offer_title: `DIWALI SPECIAL OFFER - ${disc}% OFF`
+        } : prev);
         setProductForm(prev => ({ ...prev, discount_percent: disc }));
       }
 
@@ -300,8 +318,9 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
         const category = parts[1];
         const origPrice = parseFloat(parts[2]);
         const packSize = parts[3] || 'Box';
-        const disc = 83;
-        const offer = Math.round(origPrice * 0.17);
+        const activeDefaultDisc = settings?.discount_percent || (products && products.length > 0 ? products[0].discount_percent : 87);
+        const disc = activeDefaultDisc;
+        const offer = Math.round(origPrice * (1 - disc / 100));
 
         if (name && !isNaN(origPrice)) {
           parsed.push({
@@ -574,13 +593,29 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                   <span className="text-slate-400">For:</span>
                   <select
                     value={batchCategory}
-                    onChange={(e) => setBatchCategory(e.target.value)}
+                    onChange={(e) => {
+                      const newCat = e.target.value;
+                      setBatchCategory(newCat);
+                      if (newCat === 'all') {
+                        const globalDisc = settings?.discount_percent 
+                          ?? (products && products.length > 0 && products[0].discount_percent !== undefined ? products[0].discount_percent : 87);
+                        setBatchDiscount(globalDisc.toString());
+                      } else {
+                        const catProd = products.find(p => p.category && p.category.toLowerCase() === newCat.toLowerCase());
+                        if (catProd && catProd.discount_percent !== undefined) {
+                          setBatchDiscount(catProd.discount_percent.toString());
+                        }
+                      }
+                    }}
                     className="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs outline-none"
                   >
-                    <option value="all">All Categories</option>
-                    {categories.map(c => (
-                      <option key={c.id || c.slug} value={c.name}>{c.name}</option>
-                    ))}
+                    <option value="all">All Categories ({products.length} items)</option>
+                    {categories.map(c => {
+                      const count = products.filter(p => p.category && p.category.toLowerCase() === (c.name || '').toLowerCase()).length;
+                      return (
+                        <option key={c.id || c.slug} value={c.name}>{c.name} ({count})</option>
+                      );
+                    })}
                   </select>
                 </div>
 
@@ -592,15 +627,34 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                     max="100"
                     value={batchDiscount}
                     onChange={(e) => setBatchDiscount(e.target.value)}
-                    className="w-16 p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs text-center font-bold"
+                    className="w-16 p-1.5 rounded-lg bg-slate-900 border border-festive-gold/60 text-festive-yellow text-xs text-center font-black font-mono shadow-inner outline-none focus:border-festive-gold"
                   />
                   <span className="text-slate-300 font-bold">%</span>
+                </div>
+
+                {/* Quick preset buttons for instant 1-click change */}
+                <div className="flex items-center gap-1">
+                  {[87, 85, 83, 80, 75].map(pct => (
+                    <button
+                      key={pct}
+                      type="button"
+                      onClick={() => setBatchDiscount(pct.toString())}
+                      className={`px-2 py-1 rounded text-[11px] font-bold font-mono transition-all cursor-pointer ${
+                        String(batchDiscount) === String(pct)
+                          ? 'bg-festive-gold text-slate-950 shadow-sm scale-105'
+                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                      }`}
+                      title={`Set to ${pct}%`}
+                    >
+                      {pct}%
+                    </button>
+                  ))}
                 </div>
 
                 <button
                   onClick={handleApplyBatchDiscount}
                   disabled={isBatchUpdating}
-                  className={`px-3 py-1.5 rounded-lg text-white font-bold text-xs shadow transition-all flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-white font-bold text-xs shadow transition-all flex items-center gap-1.5 cursor-pointer ${
                     isBatchUpdating 
                       ? 'bg-amber-800 cursor-not-allowed opacity-80' 
                       : 'bg-amber-600 hover:bg-amber-500 active:scale-95'
@@ -615,6 +669,20 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                     <span>Apply to Category</span>
                   )}
                 </button>
+
+                {/* Active discount indicator */}
+                <div className="ml-auto flex items-center gap-1 text-[11px] text-slate-400">
+                  <span>Current Applied:</span>
+                  <span className="text-emerald-400 font-bold font-mono bg-emerald-950/60 border border-emerald-500/30 px-1.5 py-0.5 rounded">
+                    {(() => {
+                      if (batchCategory === 'all') {
+                        return (settings?.discount_percent ?? (products[0]?.discount_percent ?? 87)) + '% OFF';
+                      }
+                      const catProd = products.find(p => p.category && p.category.toLowerCase() === batchCategory.toLowerCase());
+                      return (catProd?.discount_percent ?? (settings?.discount_percent ?? 87)) + '% OFF';
+                    })()}
+                  </span>
+                </div>
               </div>
 
               {/* Search & Filter Bar */}
@@ -1331,7 +1399,7 @@ export default function AdminDashboard({ token, user, onLogout, onBackToSite }) 
                   type="submit"
                   className="px-5 py-2 rounded-xl bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs shadow-md"
                 >
-                  Import Products (83% Discount Applied)
+                  Import Products ({settings?.discount_percent || 87}% Discount Applied)
                 </button>
               </div>
             </form>

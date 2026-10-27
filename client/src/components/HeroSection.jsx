@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, ShoppingCart, Sparkles, CheckCircle, ArrowDown, Flame } from 'lucide-react';
 
-export default function HeroSection({ onExploreClick, onOpenCart, discountPercent = 83 }) {
+export default function HeroSection({ onExploreClick, onOpenCart, discountPercent = 87 }) {
   const whatsappUrl = `https://wa.me/916380115587?text=${encodeURIComponent(`Hello Sri Jeyam Crackers! I would like to order Diwali crackers with Flat ${discountPercent}% discount.`)}`;
 
   return (

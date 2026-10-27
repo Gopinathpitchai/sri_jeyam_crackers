@@ -38,7 +38,7 @@ function parseOrderItems(order) {
 
   return raw.map(it => {
     const orig = parseFloat(it.original_price || it.price || (it.offer_price ? it.offer_price * 4 : 0));
-    const disc = it.discount_percent !== undefined ? it.discount_percent : 83;
+    const disc = it.discount_percent !== undefined ? it.discount_percent : 87;
     const offer = parseFloat(it.offer_price !== undefined ? it.offer_price : (orig ? Math.round(orig * (1 - disc / 100)) : 0));
     const qty = parseInt(it.quantity) || 1;
     return {
@@ -89,7 +89,10 @@ export default function BillInvoiceModal({
     if (initialItems.length > 0 && initialItems[0].discount_percent !== undefined) {
       return initialItems[0].discount_percent;
     }
-    return 83;
+    if (products && products.length > 0 && products[0]?.discount_percent !== undefined) {
+      return products[0].discount_percent;
+    }
+    return 87;
   });
 
   // Ensure catalog products are always available
@@ -130,7 +133,7 @@ export default function BillInvoiceModal({
     name: '',
     pack_size: '1 Box',
     original_price: '',
-    discount_percent: 83,
+    discount_percent: 87,
     offer_price: '',
     quantity: 1
   });
@@ -159,7 +162,7 @@ export default function BillInvoiceModal({
       setDeliveryCharge(order.delivery_charge || 0);
       const parsed = parseOrderItems(order);
       setItems(parsed);
-      const initDisc = order.discount_percent || (parsed.length > 0 ? parsed[0].discount_percent : 83);
+      const initDisc = order.discount_percent || (parsed.length > 0 ? parsed[0].discount_percent : (catalogProducts[0]?.discount_percent || 87));
       setBillDiscount(initDisc);
     } else {
       setInvoiceNumber(`SJC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`);
@@ -172,14 +175,17 @@ export default function BillInvoiceModal({
       setPackagingCharge(0);
       setDeliveryCharge(0);
       setItems([]);
-      setBillDiscount(83);
+      const defaultDisc = catalogProducts && catalogProducts.length > 0 && catalogProducts[0].discount_percent !== undefined 
+        ? catalogProducts[0].discount_percent 
+        : 87;
+      setBillDiscount(defaultDisc);
     }
-  }, [order]);
+  }, [order, catalogProducts]);
 
   // Keep custom item discount aligned with billDiscount
   useEffect(() => {
     setCustomItem(prev => {
-      const disc = parseInt(billDiscount) || 83;
+      const disc = parseInt(billDiscount) || 87;
       const orig = parseFloat(prev.original_price || 0);
       const newOffer = orig > 0 ? Math.round(orig * (1 - disc / 100)) : prev.offer_price;
       return {
@@ -1143,7 +1149,7 @@ export default function BillInvoiceModal({
                   {/* Presets */}
                   <div className="flex items-center gap-1 flex-wrap">
                     <span className="text-[10px] text-amber-800 font-semibold">Presets:</span>
-                    {[85, 83, 80, 75, 70].map(pct => (
+                    {[87, 85, 83, 80, 75, 70].map(pct => (
                       <button
                         key={pct}
                         type="button"

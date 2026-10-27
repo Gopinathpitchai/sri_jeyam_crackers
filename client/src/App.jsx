@@ -39,7 +39,7 @@ export default function App() {
   // Active discount percent derived from products catalog
   const discountPercent = products.length > 0 && products[0]?.discount_percent !== undefined 
     ? products[0].discount_percent 
-    : 83;
+    : 87;
 
   // Sync with browser URL navigation
   useEffect(() => {
